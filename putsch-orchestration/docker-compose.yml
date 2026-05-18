@@ -1,0 +1,67 @@
+version: "3.9"
+
+# Local development stack. Production deploys the orchestrator container
+# against managed Postgres (CloudNativePG operator on the Putsch on-prem
+# cluster) and a real LiteLLM proxy; this compose file mirrors the
+# topology for laptops and CI.
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: putsch
+      POSTGRES_PASSWORD: putsch_dev_only
+      POSTGRES_DB: putsch_orchestration
+    ports:
+      - "5432:5432"
+    volumes:
+      - putsch_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U putsch -d putsch_orchestration"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  litellm:
+    image: ghcr.io/berriai/litellm:main-stable
+    restart: unless-stopped
+    environment:
+      LITELLM_MASTER_KEY: sk-litellm-dev
+      LITELLM_LOG: INFO
+    ports:
+      - "4000:4000"
+    # Production config lives in a mounted file with provider keys; the
+    # dev compose runs LiteLLM with its built-in test routes only — the
+    # orchestrator's DSPy modules are mocked in unit tests, so this is
+    # enough to bring the service up.
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs http://localhost:4000/health/liveliness"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  orchestrator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+      litellm:
+        condition: service_healthy
+    environment:
+      PUTSCH_ENVIRONMENT: local
+      PUTSCH_DATABASE_URL: postgresql://putsch:putsch_dev_only@postgres:5432/putsch_orchestration
+      PUTSCH_LITELLM_BASE_URL: http://litellm:4000
+      PUTSCH_LITELLM_API_KEY: sk-litellm-dev
+      PUTSCH_SAP_MCP_URL: http://sap-mcp-stub:7001
+      PUTSCH_DATEV_MCP_URL: http://datev-mcp-stub:7002
+      PUTSCH_EMAIL_MCP_URL: http://email-mcp-stub:7003
+      PUTSCH_LOG_LEVEL: INFO
+      PUTSCH_OTEL_EXPORTER: stdout
+      PUTSCH_LOG_INVOICE_CONTENT: "false"
+    command: ["serve"]
+
+volumes:
+  putsch_pg_data: {}
