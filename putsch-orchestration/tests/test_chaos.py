@@ -23,6 +23,7 @@ from langgraph.types import Command
 
 from putsch_orchestration.crews.ap.crew import APCrew
 from putsch_orchestration.graph import build_graph
+from putsch_orchestration.sanitize import TaintedText
 from putsch_orchestration.state import IntakeChannel, InvoiceState, InvoiceStatus, MatchOutcome
 
 
@@ -35,12 +36,15 @@ def initial_state() -> InvoiceState:
         thread_id="01HRCHAOS0000000000000000",
         intake_channel=IntakeChannel.EMAIL,
         source_uri="s3://test/chaos.pdf",
-        raw_text=(
-            "Rechnung Nr. 2026-9999\n"
-            "Datum: 18.05.2026\n"
-            "Mustermann GmbH\n"
-            "Position 1: Item — 1 Stk x 100,00 EUR = 100,00 EUR\n"
-            "Gesamt: 119,00 EUR inkl. 19% USt"
+        raw_text=TaintedText(
+            value=(
+                "Rechnung Nr. 2026-9999\n"
+                "Datum: 18.05.2026\n"
+                "Mustermann GmbH\n"
+                "Position 1: Item — 1 Stk x 100,00 EUR = 100,00 EUR\n"
+                "Gesamt: 119,00 EUR inkl. 19% USt"
+            ),
+            source="ocr",
         ),
     )
 

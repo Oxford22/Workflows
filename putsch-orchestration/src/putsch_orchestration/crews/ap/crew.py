@@ -62,6 +62,7 @@ from putsch_orchestration.crews.ap.tools import (
 from putsch_orchestration.crews.node import CrewKickoffResult
 from putsch_orchestration.logging_setup import get_logger
 from putsch_orchestration.models import AgentRole, resolve_model
+from putsch_orchestration.sanitize import wrap_external_content
 from putsch_orchestration.state import (
     CrewError,
     InvoiceState,
@@ -178,10 +179,12 @@ class APCrew:
                 correlation_id=state.correlation_id,
             )
 
-        # Intake classification.
+        # Intake classification. `raw_text` is TaintedText; we pass the
+        # underlying value and let the runner wrap it in <external_content>
+        # before it reaches the LM.
         intake = await asyncio.to_thread(
             _run_classify_intake,
-            document_text=state.raw_text[:4000],
+            document_text=state.raw_text.value[:4000],
             sender_hint=state.source_uri,
         )
         if intake.document_kind != "eingangsrechnung":
@@ -195,10 +198,10 @@ class APCrew:
                 ),
             )
 
-        # OCR extraction.
+        # OCR extraction. raw_text.value is the tainted string; runner wraps.
         ocr_out = await asyncio.to_thread(
             _run_extract_fields,
-            invoice_text=state.raw_text,
+            invoice_text=state.raw_text.value,
             intake_hint=intake.vendor_name_guess,
         )
         if ocr_out.confidence < 0.7:
@@ -468,7 +471,12 @@ class APCrew:
 
 def _run_classify_intake(*, document_text: str, sender_hint: str) -> IntakeOutput:
     predictor = dspy.Predict(ClassifyIntake)
-    pred = predictor(document_text=document_text, sender_hint=sender_hint)
+    # Both inputs are externally-controlled (OCR'd text, email sender).
+    # They reach the LM only via the <external_content> envelope.
+    pred = predictor(
+        document_text=wrap_external_content(document_text, source="ocr"),
+        sender_hint=wrap_external_content(sender_hint, source="email"),
+    )
     return IntakeOutput(
         document_kind=pred.document_kind,
         vendor_name_guess=pred.vendor_name_guess or "",
@@ -479,7 +487,12 @@ def _run_classify_intake(*, document_text: str, sender_hint: str) -> IntakeOutpu
 
 def _run_extract_fields(*, invoice_text: str, intake_hint: str) -> OCROutput:
     predictor = dspy.Predict(ExtractInvoiceFields)
-    pred = predictor(invoice_text=invoice_text, intake_hint=intake_hint)
+    # invoice_text is OCR'd. intake_hint was derived from OCR by the prior
+    # step — also tainted. Both wrapped before reaching the model.
+    pred = predictor(
+        invoice_text=wrap_external_content(invoice_text, source="ocr"),
+        intake_hint=wrap_external_content(intake_hint, source="ocr"),
+    )
     line_items_raw = json.loads(pred.line_items_json or "[]")
     line_items = tuple(
         OCRLineItem(
@@ -509,10 +522,18 @@ def _run_match_reasoning(
     *, match_input: MatchInput, po_lines_json: str, wareneingang_json: str
 ) -> MatchOutput:
     predictor = dspy.Predict(ReasonOverMatch)
+    # Invoice JSON came from OCR; PO + Wareneingang JSON came from SAP.
+    # All three carry free-text fields (descriptions, notes) that external
+    # actors can influence — all wrapped before reaching the model.
+    invoice_lines_json = json.dumps(
+        [li.model_dump(mode="json") for li in match_input.line_items]
+    )
     pred = predictor(
-        invoice_lines_json=json.dumps([li.model_dump(mode="json") for li in match_input.line_items]),
-        po_lines_json=po_lines_json,
-        wareneingang_json=wareneingang_json,
+        invoice_lines_json=wrap_external_content(invoice_lines_json, source="ocr"),
+        po_lines_json=wrap_external_content(po_lines_json, source="sap_po"),
+        wareneingang_json=wrap_external_content(
+            wareneingang_json, source="sap_wareneingang"
+        ),
         tolerance_cents=match_input.tolerance_cents,
     )
     outcome = MatchOutcome(pred.outcome)
@@ -533,11 +554,16 @@ def _run_compose_commentary(
     line_descriptions: str,
 ) -> str:
     predictor = dspy.Predict(ComposePostingCommentary)
+    # vendor_name and line_descriptions originate from OCR.
+    # invoice_number and kostenstelle are also OCR-derived but appear
+    # in payment system fields downstream — same trust posture.
     pred = predictor(
-        vendor_name=vendor_name,
-        invoice_number=invoice_number,
-        primary_kostenstelle=primary_kostenstelle,
-        line_descriptions=line_descriptions,
+        vendor_name=wrap_external_content(vendor_name, source="ocr"),
+        invoice_number=wrap_external_content(invoice_number, source="ocr"),
+        primary_kostenstelle=wrap_external_content(
+            primary_kostenstelle, source="sap_po"
+        ),
+        line_descriptions=wrap_external_content(line_descriptions, source="ocr"),
     )
     return str(pred.buchungstext)
 

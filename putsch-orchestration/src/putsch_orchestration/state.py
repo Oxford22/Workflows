@@ -51,6 +51,8 @@ from pydantic import (
 )
 from ulid import ULID
 
+from putsch_orchestration.sanitize import TaintedText
+
 # --------------------------------------------------------------------------- #
 # Identifiers
 # --------------------------------------------------------------------------- #
@@ -316,7 +318,7 @@ class AgentMessage(BaseModel):
 
     model_config = ConfigDict(frozen=True, extra="forbid")
 
-    message_id: UUID = Field(default_factory=lambda: UUID(int=ULID().int >> 64), repr=False)
+    message_id: UUID = Field(default_factory=lambda: ULID().to_uuid(), repr=False)
     correlation_id: CorrelationId
     sender: str = Field(..., description="Agent role identifier, e.g. 'ocr_agent'.")
     recipient: str = Field(..., description="Agent role identifier or 'broadcast'.")
@@ -380,8 +382,11 @@ class InvoiceState(BaseModel):
     source_uri: str = Field(..., description="S3 URI or email message-id of the original document.")
 
     # --- OCR / extraction ---
-    raw_text: str | None = None
-    """Full OCR text. Not logged when config.log_invoice_content=False (default)."""
+    raw_text: TaintedText | None = None
+    """Full OCR text. Carries `source="ocr"` provenance — must be unwrapped
+    via `.wrap_for_prompt()` or `wrap_external_content()` before reaching any
+    LLM prompt. Not logged when config.log_invoice_content=False (default).
+    See ADR-002 for the trust-boundary policy."""
     invoice_number: str | None = None
     invoice_date: datetime | None = None
     vendor: VendorRef | None = None
@@ -426,20 +431,27 @@ class InvoiceState(BaseModel):
         if self.requires_human and not self.exception_reasons:
             raise ValueError("requires_human=True requires at least one exception_reason")
 
-        # Invariant 4: total_amount agrees with line items if both present.
-        if self.total_amount is not None and self.line_items:
+        # Line items must always share a single currency, independent of
+        # whether total_amount is populated yet (matching only makes sense
+        # against a single currency).
+        if self.line_items:
             currencies = {li.line_total.currency for li in self.line_items}
             if len(currencies) > 1:
                 raise ValueError("line_items must share a single currency")
-            if currencies and currencies.pop() != self.total_amount.currency:
-                raise ValueError("total_amount.currency must match line_items currency")
-            summed = sum(li.line_total.amount_cents for li in self.line_items)
-            # Allow 1 cent rounding tolerance (Steuerrundung).
-            if abs(summed - self.total_amount.amount_cents) > 1:
-                raise ValueError(
-                    f"total_amount {self.total_amount.amount_cents}c "
-                    f"!= sum(line_items) {summed}c"
-                )
+
+            # Invariant 4: total_amount agrees with line items if total set.
+            if self.total_amount is not None:
+                if currencies.pop() != self.total_amount.currency:
+                    raise ValueError(
+                        "total_amount.currency must match line_items currency"
+                    )
+                summed = sum(li.line_total.amount_cents for li in self.line_items)
+                # Allow 1 cent rounding tolerance (Steuerrundung).
+                if abs(summed - self.total_amount.amount_cents) > 1:
+                    raise ValueError(
+                        f"total_amount {self.total_amount.amount_cents}c "
+                        f"!= sum(line_items) {summed}c"
+                    )
 
         # Invariant 2: PostingDecision only in approved terminal-ish states.
         if self.posting_decision is not None and self.status not in {
@@ -510,6 +522,7 @@ __all__ = [
     "OrchestrationError",
     "PostingDecision",
     "StatusEvent",
+    "TaintedText",
     "ThreeWayMatch",
     "ToolError",
     "VendorRef",

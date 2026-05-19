@@ -44,6 +44,7 @@ from putsch_orchestration.crews.ap.tools import (  # noqa: E402
     WareneingangLookupResult,
 )
 from putsch_orchestration.logging_setup import configure_logging  # noqa: E402
+from putsch_orchestration.sanitize import TaintedText  # noqa: E402
 from putsch_orchestration.state import (  # noqa: E402
     IntakeChannel,
     InvoiceState,
@@ -68,13 +69,16 @@ def fresh_state() -> InvoiceState:
         thread_id="01HNYZ8GZJKB6MGAZQQHEKQQ00",
         intake_channel=IntakeChannel.EMAIL,
         source_uri="s3://test/clean-invoice.pdf",
-        raw_text=(
-            "Rechnung Nr. 2026-1001\n"
-            "Datum: 18.05.2026\n"
-            "Mustermann GmbH, Hagen\n"
-            "USt-ID: DE123456789\n"
-            "Position 1: Stahlträger HEB-200 — 5 Stk x 100,00 EUR = 500,00 EUR\n"
-            "Gesamt: 595,00 EUR inkl. 19% USt"
+        raw_text=TaintedText(
+            value=(
+                "Rechnung Nr. 2026-1001\n"
+                "Datum: 18.05.2026\n"
+                "Mustermann GmbH, Hagen\n"
+                "USt-ID: DE123456789\n"
+                "Position 1: Stahlträger HEB-200 — 5 Stk x 100,00 EUR = 500,00 EUR\n"
+                "Gesamt: 595,00 EUR inkl. 19% USt"
+            ),
+            source="ocr",
         ),
     )
 

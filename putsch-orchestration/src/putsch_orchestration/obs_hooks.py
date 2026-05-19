@@ -13,7 +13,14 @@ PII discipline: we never put OCR text, vendor names, or line descriptions
 on span attributes. The Langfuse integration will write these into Langfuse
 session metadata via a different code path (Langfuse runs inside the EU
 trust boundary; OTel collectors generally do not).
-"""
+
+Trust-boundary discipline (ADR-002): the persistence path sanitizes BEFORE
+storage, not on read. Any string attribute that originated from external
+content (OCR, SAP free text, email) must be passed through
+`safe_attribute()` at the call site. This is sanitize-on-write — the
+defense for the Langfuse-feedback-loop threat where a later debugging
+agent re-ingests injected text from session metadata. Future Langfuse
+integration MUST use the same helper for session metadata writes."""
 
 from __future__ import annotations
 
@@ -34,6 +41,7 @@ from opentelemetry.trace import Span, Status, StatusCode, Tracer
 
 from putsch_orchestration.config import Settings, get_settings
 from putsch_orchestration.logging_setup import get_logger
+from putsch_orchestration.sanitize import strip_instruction_patterns
 from putsch_orchestration.state import InvoiceState
 
 _log = get_logger(__name__)
@@ -86,6 +94,23 @@ def _tracer_or_default() -> Tracer:
     if _tracer is None:
         return trace.get_tracer("putsch.orchestration")
     return _tracer
+
+
+def safe_attribute(value: str | int | float | bool) -> str | int | float | bool:
+    """Sanitize a value before attaching it to an OTel span attribute.
+
+    Numeric and bool values pass through unchanged. String values are run
+    through `strip_instruction_patterns` so injected instructions cannot
+    survive into long-lived traces and cannot be re-ingested by future
+    debugging agents reading the trace store.
+
+    Per ADR-002, this is the canonical write-time sanitizer for any
+    observability sink — OTel attributes today, Langfuse session metadata
+    when that module ships. Never put a tainted string on a span without
+    running it through this helper."""
+    if isinstance(value, str):
+        return strip_instruction_patterns(value)
+    return value
 
 
 def _domain_attributes(state: InvoiceState) -> dict[str, Any]:
@@ -177,4 +202,4 @@ async def tool_span(
             raise
 
 
-__all__ = ["configure_tracing", "crew_span", "node_span", "tool_span"]
+__all__ = ["configure_tracing", "crew_span", "node_span", "safe_attribute", "tool_span"]

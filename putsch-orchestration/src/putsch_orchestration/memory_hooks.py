@@ -28,6 +28,19 @@ Two reasons to define the no-op interface now instead of waiting:
        no call sites move.
     2. The shape of MemoryContext is part of the orchestration contract
        — the memory module fulfills *our* API, not the other way around.
+
+Trust-boundary contract for implementers (ADR-002):
+
+    The memory write path is one of the most dangerous sinks in the
+    system. Anything written to Graphiti facts or Zep session memory
+    is later re-ingested by agent reasoning steps — an injection
+    persisted here becomes an injection that fires on every later
+    invoice from the same vendor. Sanitize-on-write is therefore
+    mandatory in `post_crew` and `post_node` implementations: every
+    tainted string passing into the memory backend MUST go through
+    `putsch_orchestration.sanitize.strip_instruction_patterns()`
+    first. The no-op implementation below performs no writes, but the
+    contract is the same: the real implementation must not violate it.
 """
 
 from __future__ import annotations

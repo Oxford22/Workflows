@@ -10,6 +10,12 @@ implementation detail and may change without an ADR.
 
 from __future__ import annotations
 
+from putsch_orchestration.sanitize import (
+    SourceTag,
+    TaintedText,
+    strip_instruction_patterns,
+    wrap_external_content,
+)
 from putsch_orchestration.state import (
     AgentMessage,
     CheckpointError,
@@ -37,7 +43,11 @@ __all__ = [
     "NodeError",
     "OrchestrationError",
     "PostingDecision",
+    "SourceTag",
+    "TaintedText",
     "ThreeWayMatch",
+    "strip_instruction_patterns",
+    "wrap_external_content",
 ]
 
 __version__ = "0.1.0"

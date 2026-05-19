@@ -23,6 +23,7 @@ from putsch_orchestration.config import get_settings
 from putsch_orchestration.graph import compiled_graph
 from putsch_orchestration.logging_setup import configure_logging, get_logger, set_correlation_id
 from putsch_orchestration.obs_hooks import configure_tracing
+from putsch_orchestration.sanitize import TaintedText
 from putsch_orchestration.state import IntakeChannel, InvoiceState, new_correlation_id
 
 _log = get_logger(__name__)
@@ -30,11 +31,14 @@ _log = get_logger(__name__)
 
 async def _run_once(args: argparse.Namespace) -> int:
     settings = get_settings()
+    raw_text = (
+        TaintedText(value=args.raw_text, source="ocr") if args.raw_text else None
+    )
     state = InvoiceState(
         thread_id=args.thread_id or new_correlation_id(),
         intake_channel=IntakeChannel(args.intake_channel),
         source_uri=args.source_uri,
-        raw_text=args.raw_text or None,
+        raw_text=raw_text,
     )
     set_correlation_id(state.correlation_id)
 
