@@ -28,6 +28,10 @@ A score of 5 is used as a neutral placeholder in totals and flagged.
 | Variant | Round | 1 Pain | 2 Wedge | 3 Why now | 4 Platform | 5 Asset | 6 Distrib | 7 Econ | 8 Build | 9 Ceiling | 10 Fit | Total | Evidence |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | v0 (seed) | 0 | 4 (4–5) | **2** (2–3) | 5 (5–6) | 3 (3–4) | 4 (3–5) | 3 (3–3) | 5 (4–5) | 5 (3–6) | 3 (2–3) | 5 [unknown] | **39** | critiques/v0-r0-{investor,builder,customer}.md; research/assumptions/A1–A6.md |
+| v1-federation (family index, no migration) | 1 | 3 (3–4) | 4 (4–5) | 5 (5–6) | 4 (3–4) | 4 (4–4) | 3 (3–4) | 6 (6–6) | 6 (6–6) | 3 (2–3) | 5 [unknown] | 43 | critiques/v1-federation-r1-*.md |
+| **v1-organizer (pro consolidation workbench, B2B2C)** | 1 | 5 (5–6) | 6 (5–6) | 5 (4–5) | 4 (4–5) | 4 (3–4) | 4 (4–6) | 6 (5–6) | 6 (6–6) | **2** (2–3) | 5 [unknown] | **47** | critiques/v1-organizer-r1-*.md |
+| v1-estate (bereavement event wedge) | 1 | 4 (4–5) | 4 (3–5) | 4 (4–5) | 4 (3–4) | 3 (3–3) | 3 (3–4) | 5 (5–6) | 4 (3–5) | 3 (2–3) | 5 [unknown] | 39 | critiques/v1-estate-r1-*.md |
+| v1-trades (camera-roll job memory, vertical) | 1 | 5 (5–6) | 6 (5–6) | 5 (5–5) | 3 (3–4) | 4 (3–4) | 3 (3–3) | 7 (6–7) | 6 (5–7) | 3 (2–4) | 5 [unknown] | 47 | critiques/v1-trades-r1-*.md |
 
 Cell format: median (min–max) across the three critics. Totals use medians; founder fit is a flagged neutral 5.
 
@@ -69,5 +73,16 @@ Cell format: median (min–max) across the three critics. Totals use medians; fo
 - Caption cost per 100k photos (Gemini 2.5 Flash-Lite): $6–13 depending on image resolution assumption (768 px vs 1024 px). Both are tagged; use the range.
 - Google One 200 GB tier: customers.md says $4.99 (CNBC 2026-02-28); unit-economics.md lists 100 GB $1.99 and 400 GB "AI Plus" $4.99. Open — to verify on one.google.com.
 
+## Round 1 evidence summary (why the top moved 39 → 47 and stalled on Ceiling)
+
+| Variant | What lifted it | What capped it | Pointer |
+|---|---|---|---|
+| v1-organizer (winner, 47) | Wedge 6: slots into a workflow the organizer is already paid for; Buildability 6: Mac-first, osxphotos names+regions, Takeout repair; Economics 6: compute on the organizer's Mac | Ceiling 2: seat cap ≈ $9.8M at 100% of ~7,800 adjacent pros; realistic $3–12M; projects per organizer per year [unknown]; hourly-billing organizers lose from automation; Mylio dropped off the 2026 TPM sponsor list | critiques/v1-organizer-r1-investor.md; research/pro-channel.md Q1, Q7 |
+| v1-trades (47) | Economics 7 (per-company SaaS, index-only); Wedge 6 | Platform 3: CompanyCam already ships GPS-matched camera-roll import (Magic Uploader), text scanning, an MCP server, and raised $415M; crew photos arrive by iMessage and are invisible to PhotoKit; $12/mo pricing tops out at $17–34M | critiques/v1-trades-r1-*.md; research/trades-and-reddit.md A2, A4 |
+| v1-federation (43) | Economics/Buildability 6: index-only, on-device, 86% GM | Pain 3: 156 Reddit posts / 178 comments, nobody pays or is told to pay for a merge; Google Photos is already installed on the iPhone side of mixed households; Android index deferred; on-device wall-clock 38–57 min central, Camera kills the task | critiques/v1-federation-r1-*.md; research/ios-feasibility.md Q3; research/trades-and-reddit.md Part B |
+| v1-estate (39) | Pain 4–5 at the event | Tukios already collects relatives' phone photos for tribute videos at 10,000+ funeral homes; Apple Data & Privacy export contents unverified; most decedents have no Legacy Contact; one-time $149 needs ~1M estates/yr for $100M | critiques/v1-estate-r1-*.md; research/estate.md funnel table |
+
+Rule reminder: v1-trades tied v1-organizer on median total; the tie went to organizer on mean critic total (47.3 vs 46.7) and because trades' lowest scores are structural (incumbent has shipped the feature; crew photos unreachable).
+
 ## Weakest dimension (drives next round)
-**Wedge (2).** Every critic: both v0 wedges require migrating the whole library out of Apple/Google before any value, and nobody has made that unattended on iOS. Round 1 variants must each deliver first value without a migration step (or with a migration someone else is already paid to do).
+**Ceiling (2–3 on every round-1 variant).** No variant has an evidence-backed path past ~$10–35M ARR. Round 2 variants must start from a pool where money already flows at scale (research/sizing.md worked chains; research/pro-channel.md Q5; research/customers.md Q1(h)) and show the $100M arithmetic with tagged inputs, or state the honest cap.

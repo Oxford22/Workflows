@@ -49,3 +49,31 @@ Weakest dimension is **Wedge (2)**. Round 1 generates variants where first value
 
 ### Next
 Round 1: four materially different variants, each attacking Wedge; six gap-research tracks exposed by the critics; twelve fresh critics (investor / builder / target customer per variant).
+
+## Round 1 — 2026-11-03 — Attack on Wedge
+
+### What happened
+- Six gap-research tracks the round-0 critics exposed, each audited and repaired: `research/{face-regulation,pro-channel,estate,sizing,ios-feasibility,trades-and-reddit}.md`.
+- Four materially different variants, each delivering first value without a user-run migration: `v1-federation` (index-only family search across relatives' phones), `v1-organizer` (Mac workbench sold to professional photo organizers, B2B2C), `v1-estate` (bereavement event wedge), `v1-trades` (camera-roll job memory for small contractors).
+- Twelve fresh-context critics (investor / builder / target customer per variant). Median totals: organizer 47, trades 47, federation 43, estate 39. Seed was 39.
+
+### What we learned
+1. **Wedge is fixable; Ceiling is the wall.** Every variant lifted Wedge to 4–6 by removing the migration step. Every variant then scored Ceiling 2–3: no evidence-backed path past ~$10–35M ARR. The seat business for organizers caps at ~$9.8M at 100% penetration of ~7,800 adjacent professionals.
+2. **Nobody pays to merge, on the record.** 156 Reddit posts and 178 comments across r/GooglePhotos, r/DataHoarder, r/Genealogy, r/widowers, r/Divorce, r/selfhosted, r/ios: not one poster paid, or was told to pay, anyone to merge libraries. Money appears only for scanning hardware/services and storage plans (`research/trades-and-reddit.md` Part B).
+3. **The platforms already sit on both sides of mixed households.** The Google Photos iOS app has full-library access, partner sharing and face groups, so "only we can span iPhone and Android" is false. What remains is product policy: one partner, private face labels, Apple's one Shared Library (`research/ios-feasibility.md` Q6: no Apple statement that People names cross Shared Library participants).
+4. **On-device indexing on iOS 27 is feasible but not unattended.** 30,000 photos: ~15 min floor, 38–57 min central, in a user-initiated Continued Processing session that the Camera app kills; the background Neural Engine entitlement has no documented request path; Apple's optimized-storage copies (~1536×2048) are sufficient for embeddings and ordinary faces without any download (`research/ios-feasibility.md` Q2–Q4).
+5. **Face regulation is a design constraint, not a blocker.** G.T. v. Samsung (7th Cir., Aug 2026) makes on-device templates a defensible design; named identities for living people need per-subject consent (BIPA written release, GDPR Art. 9); geofencing IL/TX/WA/EU for server-side matching removes 12.7% of the US population from server features (`research/face-regulation.md` risk table). MyHeritage auto-names 0% of living people.
+6. **Money flows at scale in three adjacent places**: digitization (Legacybox 2M+ families; iMemories 1M+ families, acquired by Ancestry 2025-07-30; Photomyne $17.0M FY2025, +30%, H1 2026 +59%), genealogy subscriptions ($240–480/yr), and the grandparent invite loop (FamilyAlbum ¥17.1B Lifestyle segment). All three vendors gate the post-scan archive behind their own $50–80/yr cloud; none sells the consolidation step (`research/pro-channel.md` Q5).
+7. **The estate channel is owned.** Tukios collects relatives' phone photos for tribute videos at 10,000+ funeral homes; Empathy ($162M raised, 8 of 10 top carriers) has no photo feature and chose not to build one (`research/estate.md` Q6).
+8. **Sizing inputs now exist** (`research/sizing.md`): ~80M US households (band 50–110M) pay for photo-bearing cloud; 28–47M cross-platform households [estimated]; ~2.1–2.5M deaths/yr with smartphones; 80–100M households with undigitized prints [estimated: assumption]. $100M ARR at $60/yr needs 1.67M households, ~8% of cross-platform payers. Derived paid-UA CAC for a photo app ≈ $65–90 against a $42 annual-plan LTV (Adapty); Qeepsake's disclosed $35 is the only sourced anchor.
+9. **Search demand is still [unknown]**: every keyword-volume route (Trends API, Ubersuggest, Semrush, AnswerThePublic, Wordstream) failed from this environment. A human with a Google Ads account resolves it in ten minutes.
+
+### Decision
+Winner: **v1-organizer → `variants/current.md`**, with the index-only engine from v1-federation, the tribute-pack module from v1-estate, the evidence-packet feature from v1-trades, and the consent architecture carried in. Losers to GRAVEYARD with salvage notes.
+
+Weakest dimension: **Ceiling (2)**. Round 2 generates variants that start from a pool where money already flows at scale (prints, genealogy, grandparent loop, memory-product companies as a B2B channel) and keep the organizer channel as one route to market.
+
+### Walls hit
+- Reddit via arctic-shift worked for 9 of 12 subreddits; r/iphone, r/GriefSupport, r/declutter, r/ProfessionalOrganizers returned 422 on every query. Facebook groups unreachable.
+- Several variant writers and critics exhausted their web-search budget; unresolved items are tagged [unknown] in the variant files and listed per critique.
+- Still no iPhone: the 30k-asset indexing run and the Apple Data & Privacy export check are kill criteria for the build plan, not research tasks.
