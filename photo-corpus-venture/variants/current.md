@@ -1,6 +1,6 @@
-# current.md — the surviving variant after Round 1
+# current.md — the surviving variant after Round 2 (unchanged base from Round 1)
 
-**Status (2026-11-03, end of round 1):** base = `v1-organizer` (47/100, winner on median total; tie with v1-trades broken on mean critic total 47.3 vs 46.7 and on structural lows). Weakest dimension: **Ceiling 2**. This file is the organizer variant verbatim, plus a section at the end recording what was carried in from the round-1 losers and what Round 2 must change.
+**Status (2026-11-24, end of round 2): no round-2 variant beat this one (prints 45, genealogy 45, grandparent 41, SDK 35). Round-2 merge notes are appended at the end.** Earlier status (2026-11-03, end of round 1): base = `v1-organizer` (47/100, winner on median total; tie with v1-trades broken on mean critic total 47.3 vs 46.7 and on structural lows). Weakest dimension: **Ceiling 2**. This file is the organizer variant verbatim, plus a section at the end recording what was carried in from the round-1 losers and what Round 2 must change.
 
 ---
 
@@ -175,3 +175,17 @@ Compute runs on the organizer's Mac; the server holds licensing, the review scre
 ## What Round 2 must change
 
 The seat business caps at ~$9.8M at 100% penetration of ~7,800 adjacent pros; the honest total is $3–12M. The channel is real, trusted and already paid, but it is a distribution step, not the market. Round 2 variants must start from a pool where money already flows at scale (boxes of prints: Legacybox 2M+ families, iMemories 1M+ families now inside Ancestry, Photomyne $17M FY2025 growing 30–59%; genealogy subscriptions at $240–480/yr; the grandparent invite loop that built FamilyAlbum's ¥17.1B segment) and show the $100M arithmetic with tagged inputs, keeping this organizer channel as one of the routes to market.
+
+
+---
+
+## Round-2 merge notes (2026-11-24)
+
+No round-2 variant replaced this base. What round 2 changes in it:
+
+- **Model licence:** MobileCLIP weights are research-only since 2025-02-24. The engine uses SigLIP 2 (Apache-2.0) or TinyCLIP (MIT). [research/unknowns-r1.md §5]
+- **Face-template exposure:** on-device templates are necessary, not sufficient. G.T. v. Samsung (7th Cir., 2026-08-07) protects a manufacturer that never controls the templates; in Doe v. Apple (S.D. Ill., 2026-09-30) the Local Device Class survived summary judgment. Keep templates on the organizer's Mac, delete at project close, and treat human-entered names as the primary identity signal. [research/unknowns-r1.md §8; research/face-regulation.md]
+- **Naming is a prompted, human act.** Photomyne's filing shows 0.10 tags per scan when naming is left to self-serve. The client-review screen (relatives answering "who is this?") is the product, not a finishing step. [research/digitization-market.md Q6]
+- **Prints are an ingest path, not a business.** Front-and-back capture matters (handwritten backs); mail-in vendors scan fronts only; Ancestry prices the scan as a loss leader. [research/digitization-market.md Q3, Q5]
+- **Genealogy import:** GEDCOM gives the people graph; deceased relatives are the consent-safe auto-name set. No write-back to Ancestry (no public API); FamilySearch write-back is partner-gated. [research/genealogy-market.md Q4]
+- **What people pay for:** storage/backup, artifacts and services at moments. Not organizing. Round 3 tests variants that sell an artifact or a moment and keep this workbench and archive behind it.

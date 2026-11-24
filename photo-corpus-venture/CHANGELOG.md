@@ -77,3 +77,30 @@ Weakest dimension: **Ceiling (2)**. Round 2 generates variants that start from a
 - Reddit via arctic-shift worked for 9 of 12 subreddits; r/iphone, r/GriefSupport, r/declutter, r/ProfessionalOrganizers returned 422 on every query. Facebook groups unreachable.
 - Several variant writers and critics exhausted their web-search budget; unresolved items are tagged [unknown] in the variant files and listed per critique.
 - Still no iPhone: the 30k-asset indexing run and the Apple Data & Privacy export check are kill criteria for the build plan, not research tasks.
+
+## Round 2 — 2026-11-03 to 2026-11-24 — Attack on Ceiling
+
+### What happened
+- Five gap-research tracks, each audited and repaired: `research/{digitization-market,genealogy-market,grandparent-loop,memory-product-sdk,unknowns-r1}.md`.
+- Four variants, each starting from a pool where money already flows: `v2-prints`, `v2-genealogy`, `v2-grandparent`, `v2-sdk`. Each was required to show $100M arithmetic or state its honest cap.
+- Twelve fresh-context critics. Six ran on 2026-11-03; six (all of grandparent and SDK) failed when usage credits ran out and were re-run on 2026-11-24 with the same prompts. Research dates are unchanged (2026-11-03).
+- Median totals: prints 45, genealogy 45, grandparent 41, SDK 35. **No variant beat `v1-organizer` at 47.** Rounds without improvement: 1.
+
+### What we learned
+1. **Each pool is real and each caps well short of $100M.** Stated honest ceilings: prints $25–45M US; genealogy $8–30M; grandparent loop $5–10M per its own research file; SDK $5–15M. Critics scored Ceiling 2–3 on all four.
+2. **People pay for backup and artifacts, not for naming.** Photomyne is the only audited P&L in digitization: $17.0M FY2025 revenue, ~402k paying subscribers and slipping (411k → 408k → 402k), monthly actives down 19% year on year, marketing at 64–68% of revenue, still loss-making. Its users tag 0.10 times per scan and share 0.31 times per scan. Revenue growth came from a ~50% price rise and deferred-revenue recognition, not new households.
+3. **Ancestry made the scan a loss leader.** It bought iMemories on 2025-07-30 and launched AncestryPreserve at RootsTech 2026: $20 kit, $0.49/photo, scans land in the tree gallery. MyHeritage's $49.90/yr Photo plan bundles scanning; PhotoDater is free; Photo Discoveries shipped 2026-07-21.
+4. **Genealogy is closed.** ~3–4.8M paying subscribers worldwide, flat since 2020. Ancestry has no public API and re-platformed its partner API on 2026-05-05. FamilySearch write access requires Solutions Program certification. Neither Apple Photos nor Google Photos rebuilds People from XMP, so a third party cannot put a name where the customer's tree or library lives.
+5. **The grandparent loop is a subsidy, not a mechanic an entrant can copy.** FamilyAlbum: 30M registered, 12M monthly actives, 65% of Japanese births, free unlimited storage of originals, ~5% segment margin, ad spend 13–15% of segment sales. Only 4.3% of new members pay as followers. Tinybeans' "multigenerational archive" pivot left core paid subscribers flat at ~50k. Open face models reach 30.7% true-accept on infants aged 0–6 months.
+6. **The SDK buyer set is empty.** Shutterfly, CEWE, Mixbook and Chatbooks all shipped in-house curation in 2025–2026, mostly on Apple's free Vision aesthetics API. iOS has no sanctioned way for an SDK to hold one index shared across companies' apps. Google partnered with Fujifilm directly (2026-09-30).
+7. **Ten cheap unknowns closed** (see SCORECARD). The two that change the build: MobileCLIP weights are research-only (use SigLIP 2 or TinyCLIP), and on-device face templates are not a liability shield by themselves (Doe v. Apple's Local Device Class survived summary judgment on 2026-09-30, even as the 7th Circuit cleared Samsung on 2026-08-07).
+
+### Decision
+`variants/current.md` keeps the organizer workbench as its base, with round-2 merge notes appended. All four round-2 variants go to GRAVEYARD with salvage notes.
+
+The pattern across three rounds: every variant that charges for organizing, naming or merging caps at Ceiling 2–3. Round 3 changes what is sold. Variants must monetize an **artifact or a moment** people already pay for at scale, and keep the archive as the retention asset behind it. Candidates: a gifted, AI-interviewed photo memoir for an aging parent (Storyworth and Remento sell at $99; Aura and Skylight sell gift frames to grandparents); a printed family journal mailed to grandparents (Famileo, Neveo); an institutional legacy program for senior living and hospice (LifeBio, Storii, Famileo's care-home channel). None of these comparables were researched in rounds 0–2.
+
+### Walls hit
+- Usage credits ran out mid-round on 2026-11-03; the round resumed on 2026-11-24 after a model change. The three-week gap means price and product facts dated 2026-11-03 should be re-checked before the pitch is used.
+- The direct page-fetch tool was withdrawn from this session; research agents now use web search plus curl through the proxy. Sites that block non-browser clients stay [unknown].
+- To limit spend, rounds from here run three variants (the minimum), three narrow research tracks, and nine critics.

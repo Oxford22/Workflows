@@ -32,6 +32,10 @@ A score of 5 is used as a neutral placeholder in totals and flagged.
 | **v1-organizer (pro consolidation workbench, B2B2C)** | 1 | 5 (5–6) | 6 (5–6) | 5 (4–5) | 4 (4–5) | 4 (3–4) | 4 (4–6) | 6 (5–6) | 6 (6–6) | **2** (2–3) | 5 [unknown] | **47** | critiques/v1-organizer-r1-*.md |
 | v1-estate (bereavement event wedge) | 1 | 4 (4–5) | 4 (3–5) | 4 (4–5) | 4 (3–4) | 3 (3–3) | 3 (3–4) | 5 (5–6) | 4 (3–5) | 3 (2–3) | 5 [unknown] | 39 | critiques/v1-estate-r1-*.md |
 | v1-trades (camera-roll job memory, vertical) | 1 | 5 (5–6) | 6 (5–6) | 5 (5–5) | 3 (3–4) | 4 (3–4) | 3 (3–3) | 7 (6–7) | 6 (5–7) | 3 (2–4) | 5 [unknown] | 47 | critiques/v1-trades-r1-*.md |
+| v2-prints (print-first family archive) | 2 | 5 (5–5) | 5 (4–6) | 5 (4–5) | 4 (3–4) | 4 (3–4) | 3 (3–3) | 6 (6–6) | 5 (5–6) | 3 (2–3) | 5 [unknown] | 45 | critiques/v2-prints-r2-*.md |
+| v2-genealogy (photo layer for family historians) | 2 | 5 (5–6) | 5 (4–5) | 5 (5–5) | 3 (3–4) | 4 (4–4) | 3 (3–4) | 6 (6–6) | 6 (4–6) | 3 (2–3) | 5 [unknown] | 45 | critiques/v2-genealogy-r2-*.md |
+| v2-grandparent (newborn/grandparent loop + archive) | 2 | 4 (4–5) | 4 (4–5) | 4 (4–4) | 3 (3–3) | 4 (4–4) | 4 (3–4) | 5 (5–5) | 5 (5–6) | 3 (2–3) | 5 [unknown] | 41 | critiques/v2-grandparent-r2-*.md |
+| v2-sdk (memory-product curation SDK, B2B) | 2 | 3 (3–4) | 3 (3–4) | 4 (3–5) | 2 (2–3) | 3 (3–3) | 2 (2–3) | 5 (4–5) | 6 (5–7) | 2 (2–2) | 5 [unknown] | 35 | critiques/v2-sdk-r2-*.md |
 
 Cell format: median (min–max) across the three critics. Totals use medians; founder fit is a flagged neutral 5.
 
@@ -84,5 +88,33 @@ Cell format: median (min–max) across the three critics. Totals use medians; fo
 
 Rule reminder: v1-trades tied v1-organizer on median total; the tie went to organizer on mean critic total (47.3 vs 46.7) and because trades' lowest scores are structural (incumbent has shipped the feature; crew photos unreachable).
 
+## Round 2 evidence summary (why nothing beat 47)
+
+Top total after round 2: **47 (v1-organizer, unchanged)**. Rounds without improvement: 1.
+
+| Variant | Its own honest ceiling | The fact that capped it | Pointer |
+|---|---|---|---|
+| v2-prints (45) | $25–45M US, $35–60M with international | The only audited P&L in digitization (Photomyne: $17.0M FY2025, ~402k payers, flat-to-down, marketing 64–68% of revenue, loss-making) shows customers tag 0.10 times per scan and pay for backup, not naming; Ancestry now sells the scan at $0.49/photo as a loss leader for tree subscriptions; mail-in partners scan fronts only, so handwritten backs never reach the app | critiques/v2-prints-r2-*.md; research/digitization-market.md Q1, Q3, Q6 |
+| v2-genealogy (45) | $8–30M | The whole paying pool (~3–4.8M, flat since 2020) lives inside Ancestry and MyHeritage, which already ship dating, deceased-face matching and bulk tagging, own the tree, and closed their APIs (2023-12, 2026-05-05); FamilySearch write access needs partner certification; $100M needs 36% of every paying genealogist on earth | critiques/v2-genealogy-r2-*.md; research/genealogy-market.md Q3, Q4, §3 |
+| v2-grandparent (41) | Variant said $25–45M; its own research file says $5–10M | FamilyAlbum's loop was bought with free unlimited storage of originals and runs at ~5% segment margin; only 4.3% of new members pay as followers; grandparents do not pay; Tinybeans' core paid base is flat at ~50k; open face models reach 30.7% TAR on infants 0–6 months, so "your phone found today's baby photos" does not work when it matters | critiques/v2-grandparent-r2-*.md; research/grandparent-loop.md Q1, Q4, §4 |
+| v2-sdk (35) | $5–15M | Every photo-product company with volume has already built curation on Apple's free Vision aesthetics API or in-house (Shutterfly Autofill, CEWE, Mixbook Story Mode, Chatbooks Smart Select; Google–Fujifilm 2026-09-30); iOS has no sanctioned cross-app shared index; a per-order fee must fit inside an 11.6% EBIT margin | critiques/v2-sdk-r2-*.md; research/memory-product-sdk.md Q5, Q6, Q7 |
+
+Pattern across rounds 0–2: consumers in this space pay for **storage/backup, artifacts and services at moments** (scan orders, books, tribute videos, gifts). They do not pay for naming, organizing or merging. Every variant that charged for the organizing layer capped at Ceiling 2–3.
+
+## Unknowns resolved in round 2 (research/unknowns-r1.md)
+
+| Unknown | Verdict | Confidence |
+|---|---|---|
+| People names shared across iCloud Shared Photo Library participants? | No; per-account | Medium |
+| Apple Data & Privacy photo export contents | Photos + album/Memories CSVs + Shared Albums zip, 1–25 GB parts, days to a week, link valid 14 days, blocked under Advanced Data Protection; People names unknown | Medium |
+| PhotoKit sees photos received in Messages? | Only if auto-saved to the library | High |
+| iOS 27 background inference entitlement | Documented, no request path, no public grant; Camera kills the task | High |
+| MobileCLIP licence | Research-only since 2025-02-24; use SigLIP 2 (Apache-2.0) or TinyCLIP (MIT) | High |
+| Google One 200 GB tier | Exists, $4.99/mo per CNBC 2026-02-28 | Medium |
+| On-device face templates and BIPA | G.T. v. Samsung (7th Cir. 2026-08-07): manufacturer with on-device templates not liable. Doe v. Apple (S.D. Ill., 2026-09-30): Local Device Class survived summary judgment. On-device is necessary, not sufficient | High |
+| ChatGPT custom MCP for consumers | Pro read/fetch only; Business/Enterprise full; web setup; Plus/Go/Free absent | High/Medium |
+| Apple Legacy Contact adoption | No primary exists; 12% all-platform account-level controls (Trust & Will 2026) | High |
+| Photo Managers platform/billing split | Unpublished | High |
+
 ## Weakest dimension (drives next round)
-**Ceiling (2–3 on every round-1 variant).** No variant has an evidence-backed path past ~$10–35M ARR. Round 2 variants must start from a pool where money already flows at scale (research/sizing.md worked chains; research/pro-channel.md Q5; research/customers.md Q1(h)) and show the $100M arithmetic with tagged inputs, or state the honest cap.
+**Ceiling (2 on the leader; 2–3 on every variant in rounds 1–2).** Round 3 changes what is sold, not who organizes: variants must monetize an **artifact or a moment** that people demonstrably pay for at scale (gifts to aging parents, printed family journals, institutional legacy programs), keep the family archive as the retention asset behind it, and bring sourced revenue for the comparables (Storyworth, Remento, Aura, Skylight, Famileo, Neveo, LifeBio, Storii), none of which rounds 0–2 researched.
