@@ -1,0 +1,147 @@
+{
+ "untagged_numbers": [
+  "L9 (Bottom line 3): \"The buyer exists and is counted (41,465 assisted-living communities, 14,742 nursing facilities, 6,535 hospices) ... the dominant engagement vendor (LifeLoop, 4,700+ communities)\" -- no tag on the line (tagged only later in Q1/Q2).",
+  "L10 (Bottom line 4): \"Price evidence clusters at $2,000-$10,000 per community per year for life story and $39-$650 per community per month for engagement tools; at LifeLoop-level penetration (about 8% of facilities)\" -- only the $8M-$28M result carries a tag; the price ranges and 8% do not.",
+  "L11 (Bottom line 5): \"Famileo (near EUR 14M in 2024) ... it took about ten years to reach that figure\" -- no tag.",
+  "L34: \"LifeLoop (iN2L acquired LifeLoop in 2022, unified name 2023)\" -- the 2023 rename is not tagged and is not in either cited article.",
+  "L47: \"Storii / StoriiCare (UK origin, 2014 idea)\" -- untagged year.",
+  "L53: \"Willingness to pay is real but small: $40-$154 per resident per year, or $2,000-$10,000 per community. Scale: the largest sourced dedicated vendor is at about $2M; the largest adjacent family-photo business with a care-home channel is at about EUR 14M.\" -- no tag on the line.",
+  "L57: \"F679 as the activities tag is from memory and [unknown: not verified this session]\" -- a value asserted from memory under an [unknown] tag; README defines [unknown] as 'we looked and could not find it'.",
+  "L60: \"13 months is a common practice figure, not found in the rule\" -- no source for the practice claim.",
+  "L88: \"Scale after two decades: LifeBio about $2M (2023).\" -- untagged restatement (only the $42K ratio is tagged).",
+  "L92: \"forum anecdotes put consumables at $9-$23 per resident per month, and LifeBio's $40 per resident per year sits inside that\" -- untagged.",
+  "L100 (channel table): \"$39-$650 per community per month for engagement tools [sourced/secondary: Q2]\" -- non-standard hybrid tag; \"90-day multi-vendor pilots\" untagged in the same row.",
+  "L106 (channel table): \"8 of top 10 carriers use Empathy (estate.md)\" -- a file cross-reference instead of a tag.",
+  "L111: \"LifeBio, over $2M (2023, secondary) ... Famileo (about EUR 14M, 2024, secondary) ... LifeLoop probably exceeds $10M\" -- informal parentheticals instead of tags; 'probably exceeds $10M' has no method.",
+  "L117-L125 (Comparables table): essentially every cell is untagged, e.g. \"| LifeBio | 2001 (company) / 2006 (podcast) | ... | >$2M revenue, 48 employees (2023) | $2,000-$10,000 per community per year (2017); $149-$699 consumer |\", \"| Storii / StoriiCare | 2014-16 | ... | 300+ care providers, 12 countries | $2,500-$4,000 per year (2017); now $425-$650 per location per month |\", \"| My Life Films | ... | GBP 235,652 income FY2025 |\", \"| Famileo | 2014 | ... | 260,000 families; 2,700 establishments; about EUR 14M (2024) | EUR 55 per establishment per month; about EUR 5.99 per family per month |\", \"| LifeLoop | 1992 (iN2L) | ... | 4,700+ communities |\", \"| Rendever | ... | 500+ partners | $39-$99 per month (Live); $365 per month (VR, circa 2020) |\", \"| MemoryWell | ... | $450 per story (2017) |\".",
+  "L124-L125: \"Rendever | 2016 [unknown, not verified]\" and \"Empathy | 2020 [unknown, not verified]\" -- numbers stated with an [unknown] tag (not looked up); \"$162M raised (estate.md)\" is a cross-reference, not a tag.",
+  "L158 (Numbers table): \"Activities: $22.50, about $9, under $20 per resident per month\" -- 'under $20' is a derivation ($2,000/100+) that appears nowhere in the body and is tagged sourced-secondary rather than estimated; $700/31 is $22.58, not $22.50.",
+  "General: README allows only [sourced: url], [estimated: method], [unknown]. The file invents [sourced-secondary] (59 search-extract citations where the page was never read) and, in many [sourced:] tags, gives a page name or 'URL above' instead of a URL plus date."
+ ],
+ "suspect_claims": [
+  {
+   "claim": "Hospice: \"6,535 hospices served Medicare beneficiaries in 2023; 1.7 million beneficiaries; $25.7 billion Medicare spend\" and bereavement \"at most 1.3 ... percentage points\" of 2022 margin [MedPAC March 2025]; derived \"$334M per year, or about $257 per hospice death\".",
+   "problem": "STALE by one edition. The file itself cites the March 2026 MedPAC report for home health but used the March 2025 one for hospice. March 2026 Ch. 10 (https://www.medpac.gov/wp-content/uploads/2026/03/Mar26_Ch10_MedPAC_Report_To_Congress_SEC.pdf) reads: \"In 2024, 6,706 hospices provided care to Medicare\", \"1.82 million Medicare beneficiaries received hospice\", \"expenditures totaled $28.3 billion\", and bereavement/volunteer costs would reduce \"the aggregate Medicare margin for 2023 by at most 1.1 percentage points and 0.3 percentage points\". Re-derived pool is about $311M (1.1% x $28.3B), not $334M. The 1.82M also conflicts with estate.md's 1.91M (Alliance) and the file does not reconcile them; the $257/death figure divides 2023 dollars by a 2024 death count from a different source.",
+   "severity": "major"
+  },
+  {
+   "claim": "LifeBio: \"over $2 million in revenue with 48 employees\", \"mostly self-funded with a little angel funding\"; \"Revenue per employee about $42K ... indicates a labour-heavy service\"; presented as the largest sourced dedicated-vendor revenue.",
+   "problem": "Quote is verbatim on the Practical Founders page (dated May 5, 2023; page is titled episode #44 although the slug says 43), so not fabricated, but it is a 3.5-year-old podcast host summary and the file missed a material fact: NIH RePORTER (api.reporter.nih.gov, org LIFEBIO INC) lists 7 NIA SBIR awards totalling $5,371,563 for FY2020-FY2026 ($1,384,248 FY2020; $1,556,065 FY2021; $432,337 FY2024; $968,966 FY2025; $1,029,947 FY2026). Grant income of $0.4M-$1.6M a year is a large share of a ~$2M top line, so institutional customer revenue may be well under $2M, 'mostly self-funded' is no longer accurate, and the $42K revenue-per-employee inference is confounded by grant-funded R&D staff. The brief asked for revenue/headcount signals; this one was not found.",
+   "severity": "major"
+  },
+  {
+   "claim": "LifeBio: \"Starter Story's estimate of about $165K per month in 2023 is a third-party estimator and merely consistent\".",
+   "problem": "Estimator-only and circular. The fetched Starter Story page says it is compiled by an \"AI research system ... from 55 public sources — the founder didn't write it\" and shows \"Total Revenue ~$2M total as of 2023\"; $165K/month is simply $2M/12, i.e. the same podcast number recycled, not corroboration. The file also reports only the estimator that agrees: one search surfaces Growjo at $4M and Prospeo at $6,371,696 (both estimators, both still under $10M). None should be carried in the numbers table as evidence.",
+   "severity": "minor"
+  },
+  {
+   "claim": "Q8 ceiling: \"observed prices of $40-$150 per resident per year: $7.5M-$28.3M\" and \"To reach $100M at 8.4% penetration needs about $530 per resident per year, three to thirteen times any institutional price found.\"",
+   "problem": "Contradicted by the file's own evidence. The same 2017 article it cites gives MemoryWell at \"$450 per article\" paid by facilities (530/450 = 1.2x, not 3-13x) and Storii at \"$2,500 per year\" for \"1 to 25 residents\" ($100 to $2,500 per resident, not the $80-$154 the file derives by using only the 26-50 tier). $40 is explicitly a floor (\"about $2,000 a year to cover less than 50 people\"). The headline $8M-$28M cap is therefore built from floor prices on 9-year-old data and the '3 to 13 times' sentence is false as written. Arithmetic itself reproduces (2,256,424 x 8.36% x $40 = $7.5M; x $150 = $28.3M), but the inputs are cherry-picked low; at $450 per resident the same formula gives about $85M.",
+   "severity": "major"
+  },
+  {
+   "claim": "All institutional life-story price evidence (LifeBio $2,000 / $5,000-$10,000; Storii $2,500 / $4,000; MemoryWell $450).",
+   "problem": "Stale: every figure comes from one trade article dated January 14, 2017 (iadvanceseniorcare.com; quotes verified verbatim). No current institutional price for any life-story vendor was obtained, yet these 2017 prices drive bottom-line points 4 and the ceiling arithmetic without an age caveat in the bottom line.",
+   "severity": "major"
+  },
+  {
+   "claim": "\"iN2L counted 3,700 communities in 2022\" [sourced: seniorhousingnews.com 2022-04-25].",
+   "problem": "Overstated. The page says: \"In the subsequent 30 years, iN2L has been involved with more than 3,700 senior living communities\" -- a cumulative lifetime figure, not a 2022 customer count.",
+   "severity": "minor"
+  },
+  {
+   "claim": "LifeLoop \"trusted by more than 4,700 communities across North America\" used as the penetration anchor (8.4%).",
+   "problem": "Verified verbatim in the Oct 6, 2026 release, but it is unchanged press-release boilerplate (same 4,700 in January 2026 and May 2026 releases per search), is a vendor self-claim, and has not visibly moved despite the 600 communities added with Linked Senior in 2024 and a lifetime iN2L figure of 3,700. The file treats it as a hard current count and does not note that flat count as evidence for or against growth. LifeLoop's homepage also claims '550K lives' (about 117 per community), which the file did not use and which conflicts with its 83-residents-per-community estimate.",
+   "severity": "minor"
+  },
+  {
+   "claim": "Famileo: \"près de 14 millions d'euros\" revenue in 2024, \"16 million planned for 2025\", 260,000 families, 2,700 establishments, 70 staff.",
+   "problem": "All figures verified verbatim on bretagne-economique.com (12 December 2025), but they are founder claims in regional press, not statutory accounts; no Infogreffe/Pappers filing was checked, and one search found no independent corroboration. As of November 2026 the '16M planned for 2025' is a stale forecast for a year that has closed. Also inconsistent founding year: file says 2014, Famileo Pro's own page says \"Lancé en 2015\"; and the same Famileo Pro page gives different scale numbers (\"240 000 personnes âgées\", \"1,7 millions d'utilisateurs\") that the file does not mention.",
+   "severity": "minor"
+  },
+  {
+   "claim": "\"Precoa acquired Everplans in 2024\" [sourced: everplans.com blog 2025-10-27].",
+   "problem": "The cited page (the October 27, 2025 preneed-platform launch post) does not state the acquisition or the year. The fact itself is true per a 24-7 Press Release dated 16 October 2024 found by search, but the citation does not support it.",
+   "severity": "minor"
+  },
+  {
+   "claim": "Channel table: \"8 of top 10 carriers use Empathy (estate.md)\".",
+   "problem": "estate.md line 105 explicitly flags this as conflicting by source (\"Carrier/lives figures CONFLICT by source: Empathy's blog says '8 of the 10 top life insurance carriers'...\"). It is a company marketing claim presented here as a buyer count with no tag and no caveat.",
+   "severity": "minor"
+  },
+  {
+   "claim": "\"assisted-living turnover 71.9% ... A different survey gives 34.5% for 2025 ... either way...\"",
+   "problem": "71.9% and 39% within 90 days verified on McKnight's (12 November 2026, Activated Insights; \"the lowest since the fourth quarter of 2024 when turnover was 84.6%\"). The 34.5% is a search extract never opened; a factor-of-two disagreement on a load-bearing staffing argument is left unresolved rather than explained (different populations/methods).",
+   "severity": "minor"
+  },
+  {
+   "claim": "\"the top four operate 1,140 communities, 2.7% of assisted-living communities\".",
+   "problem": "Numerator and denominator are different universes: Argentum counts independent living, memory care and CCRC communities (\"independent and assisted living, memory care and continuing care retirement / life plan communities\"), the denominator is NCAL assisted living/residential care only. 'Top four' is by units; by community count Sunrise (231) and Atria (170) outrank LCS (119) and Erickson (23). Direction of the conclusion holds; the 2.7% is not a clean statistic.",
+   "severity": "minor"
+  },
+  {
+   "claim": "\"National count of memory-care units from a primary 2026 source: [unknown]\" (uses NIC/broker search extracts: 247,200; 255,000-270,000; 5,750 properties).",
+   "problem": "The file's own primary source (NCAL Fast Facts, June 2026) states \"18% have a designated unit/wing/floor\" and \"11% only serve adults with dementia\", which gives a national community-level memory-care count (about 29% of 41,465, roughly 12,000 communities). It was not used; the answer instead rests on unread search extracts.",
+   "severity": "minor"
+  },
+  {
+   "claim": "\"LifeBio's $40 per resident per year sits inside that\" ($9-$23 per resident per month activities budget).",
+   "problem": "Unit mismatch: $40 a year is $3.33 a month, which is below, not inside, a $9-$23 monthly range. The underlying budget figures are undated forum posts never fetched (site was down).",
+   "severity": "minor"
+  },
+  {
+   "claim": "\"$39-$650 per community per month for engagement tools\".",
+   "problem": "Low end is the RendeverLive 'Energize' annual-billing tier (verified: \"$49 $39 /month ... 30 session credits per month ... Works with any computer or tablet\"), a streaming add-on not shown to be priced per community; high end is StoriiCare, an EHR, from directory extracts the file admits disagree. The range mixes product types and is not an engagement-platform price; the dominant vendor's (LifeLoop) price is unknown.",
+   "severity": "minor"
+  },
+  {
+   "claim": "Famileo Pro: \"from EUR 55 excl. VAT per establishment per month up to 50 residents\" [sourced: famileopro.com/fr-fr/handicap/tarifs].",
+   "problem": "Cited page is the disability-sector price page (\"jusqu'à 50 habitants\"), not the EHPAD page. The care-home page https://www.famileopro.com/fr-fr/tarifs shows the same price (\"A partir de 55 EUR HT/mois par établissement* *jusqu'à 50 résidents\"), so the number is right but the citation is to the wrong product.",
+   "severity": "minor"
+  },
+  {
+   "claim": "Comparables table: LifeLoop start \"1992 (iN2L)\".",
+   "problem": "Untagged. It matches the SHN article (\"iN2L was co-founded in 1992\") but conflicts with the commonly published 1999 founding of iN2L; LifeLoop itself dates from 2015. Listed as a single start year with no source.",
+   "severity": "minor"
+  }
+ ],
+ "sources_checked": 34,
+ "sources_broken_or_misquoted": [
+  "https://register-of-charities.charitycommission.gov.uk/en/charity-search/-/charity-details/5045434 -- returns 403 to curl as cited; the /financial-history subpage loads and SUPPORTS the claim: \"Total gross income ... £235.65k; Total expenditure ... £237.20k\" for period ending 28/02/2025 (income down from £269.20k in FY2021).",
+  "https://www.everplans.com/blog/everplans-and-precoa-re-invent-preneed-policy-sale-and-delivery -- supports the 27 October 2025 platform launch only; does NOT support \"Precoa acquired Everplans in 2024\" (confirmed separately by search: press release of 16 October 2024).",
+  "https://seniorhousingnews.com/2022/04/25/in2l-acquires-lifeloop-... -- misquoted: page says iN2L \"has been involved with more than 3,700 senior living communities\" over \"the subsequent 30 years\", not 3,700 customers in 2022. Vista March 2021 investment is supported.",
+  "https://www.famileopro.com/fr-fr/handicap/tarifs -- wrong page for the EHPAD claim (disability product, \"jusqu'à 50 habitants\"); correct page /fr-fr/tarifs gives the same EUR 55 HT \"jusqu'à 50 résidents\".",
+  "https://www.starterstory.com/businesses/lifebio-app -- fetched page shows \"~$2M total as of 2023\" compiled by an AI system from public sources; the cited \"$165K per month\" is not on the fetched page text and is circular with the podcast figure.",
+  "https://www.medpac.gov/wp-content/uploads/2025/03/Mar25_Ch9_MedPAC_Report_To_Congress_SEC.pdf -- supports 6,535 / 1.7 million / $25.7 billion and endnote 24 verbatim, but is superseded by the March 2026 hospice chapter (Ch. 10: 6,706 hospices, 1.82 million, $28.3 billion, 1.1 points).",
+  "https://practicalfounders.com/podcast/43-helping-seniors-... -- supports the quote verbatim (\"over $2 million in revenue with 48 employees\", \"Founded: 2006\", May 5, 2023); page heading is episode #44, and the text is the host's summary, not a filing.",
+  "Verified as stated (no problem): AHCA/NCAL Fast Facts PDF June 2026 (41,465; 1,369,317; 1,016,424; 33; 43/14/33/10%; 44%; $74,400; 512,300); AHCA facts page (57.3% / 42.7%); KFF (14,742; about 1.24 million; July 2025 data); MedPAC Mar26 Ch8 (12,234; 9,320); gov.uk DHSC (354,125; 92.3%; 489,208; 86.5%); 42 CFR 483.20, 483.21, 418.64; Ziegler May 2025 (3.80%/3.00%; 9.78%/7.00%; 170+; 63%); PubMed 29493789, 21741309, 30431682, 27559566; prnewswire LifeLoop/Compass (4,700; 38; Oct 6, 2026); lifeloop.com Life Story; rendever.com pricing and home (500+); storiicare.com (300+, 12 countries, 20,000+); famileopro.com home (2,700); lifebio.org health-plans (PEPM/PMPM, VBID) and our-story (2001); shop.lifebio.com ($149, $299, $699 sale price vs $729 list); McKnight's Argentum 2026 (584/47,085; 414/46,074; 119/30,957; 23/26,425; also confirms Sunrise 231/22,082 which the file tagged only as secondary); McKnight's Linked Senior (600; 50,000; third by 2027); McKnight's turnover (71.9%; 39%); iadvanceseniorcare 2017 (all three vendors' prices); bretagne-economique (all Famileo figures); KFF Health News ($2,340 on $7,895; $16 million Aegis settlement; 'Almost half').",
+  "Not checkable by design: 59 [sourced-secondary] items are search-result extracts the author never opened (NIC memory-care/CCRC counts, Atria 170/21,215, 14,722 England care homes with 'originating page not confirmed', StoriiCare list prices, activity-budget forum posts, PointClickCare listing requirements, sales-cycle anecdotes, MemoryWell status, all French family-pays examples, Empathy carrier list, Precoa 'nearly one million families'). These are not 'primary or near-primary' under README."
+ ],
+ "missing_vs_brief": [
+  "Q1: home-care (non-medical) agencies and clients -- [unknown] with only an IBISWorld extract; no attempt at Census/BLS NAICS 621610/624120, CDC NPALS or state licensure data is recorded.",
+  "Q1: independent living / CCRC national counts -- [unknown]; only a NIC search extract for 99 markets. The fetched McKnight's/Argentum page had IL unit and CCRC community data by operator that was not used.",
+  "Q1: memory-care units -- answered only from unread search extracts; the NCAL Fast Facts PDF the author did fetch gives 18% with a dementia unit and 11% dementia-only and was ignored.",
+  "Q1: UK care homes -- England only, residents from a partial-response survey; the home count (14,722) is a search extract with 'originating page not confirmed'; no CQC/ONS primary source; Scotland/Wales/NI absent.",
+  "Q1: hospice -- uses 2023 MedPAC data although the March 2026 chapter (2024 data) was available; no reconciliation with estate.md's 1.91M.",
+  "Q2: Caremerge/VoiceFriend, Sagely, Wellzesta, Eversound, Uniper -- all five dismissed as [unknown] after 'one extended search'; no vendor site, press release or directory page was fetched for any of them. Linked Senior covered only as an acquisition.",
+  "Q2: LifeLoop price per community/resident -- [unknown]; no attempt via public-sector procurement records, state veterans-home contracts, GSA or operator RFPs.",
+  "Q2: activities/life-enrichment budget per resident per month -- no survey found; rests on undated forum posts that could not be fetched. Technology spend is answered (Ziegler) but only as a share of budget for mostly not-for-profit single sites.",
+  "Q3: LifeBio -- customer/organisation count [unknown]; current institutional price [unknown]; MyHello line named but not described or priced; NIH SBIR grant funding (about $5.4M FY2020-26 on NIH RePORTER) not found; founding date left as an unresolved conflict; 'people served' left as conflicting extracts.",
+  "Q3: Storii -- number of communities using the life-story product [unknown] (300+ is StoriiCare EHR providers); current price not retrieved.",
+  "Q3: MemoryWell -- status 'treat as inactive, not confirmed'; no state corporate-registry, LinkedIn or SBIR-record check; founding year [unknown] though easily found.",
+  "Q3: My Life Films care-home subscriber count and My Life TV price [unknown] (annual report/accounts PDF on the Charity Commission site not opened).",
+  "Q3: ReminX, Vita Story, Guided Autobiography -- [unknown] after one combined search; StoryCorps Legacy site count [unknown] (only '4 named partners' from an extract).",
+  "Q3: Famileo Pro 'who pays' rests entirely on search extracts; B2B share of revenue [unknown].",
+  "Q4: F-tags -- F656 from a search extract, F679 'from memory'; CMS State Operations Manual Appendix PP was not opened, so whether surveyor guidance cites life-history capture is unanswered.",
+  "Q4: memory-care state regulations requiring social history -- one Iowa rule (a 2014 version) fetched; New York and Indiana from extracts; no 50-state count and no use of the NCAL state regulatory review.",
+  "Q4: dignity therapy -- only one RCT with a p-value; no effect sizes and no meta-analysis; consensus/PubMed search tools beyond four efetch calls were not used. Whether legacy projects are reimbursable is asserted from absence in 418.64 rather than from a CMS source.",
+  "Q5: typical sales cycle and contract size from LifeLoop, PointClickCare, August Health or Sage -- [unknown]; contract size not addressed at all; evidence is three search extracts (one paywalled anecdote, one consultant guide).",
+  "Q5: Yardi and MatrixCare marketplaces -- explicitly 'not researched' but tagged [unknown], which README reserves for 'we looked and could not find it'. PointClickCare listing requirements are from extracts and 'an older partner agreement', not a fetched page.",
+  "Q5: pilot-to-rollout conversion evidence -- one anecdote; no data.",
+  "Q6: US example of a community billing families for a legacy/life-story add-on -- none found after one search; French family-paid price (EUR 5.99) is an extract from a third-party site, not Famileo's own pricing page.",
+  "Q7: Trust & Will partnerships -- not mentioned anywhere in the file. Empathy per-claim/per-member price and revenue [unknown] after two searches; carrier filings, RFPs and state insurance-department documents not tried. Pre-need 'legacy' add-ons limited to Everplans/Precoa; no other pre-need carriers (e.g. NGL, Homesteaders) examined, although NGL's earlier ownership of Everplans surfaces in a single search.",
+  "Q8: 'operators treat it as free marketing rather than budgeted software' -- [unknown], no evidence either way; no check of operator websites that advertise life-story programmes as a selling point.",
+  "Output: channel table and the $10M statement are present, but the comparables table is untagged and the health-plan (DSNP/ISNP) buyer count is [unknown] despite CMS publishing SNP enrolment."
+ ],
+ "verdict": "needs_fix"
+}
