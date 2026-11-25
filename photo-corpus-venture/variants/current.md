@@ -1,4 +1,4 @@
-# current.md — the surviving variant after Round 3 (unchanged base from Round 1)
+# current.md — the surviving variant after Round 4 (unchanged base from Round 1)
 
 **Status (2026-11-24, end of round 2): no round-2 variant beat this one (prints 45, genealogy 45, grandparent 41, SDK 35). Round-2 merge notes are appended at the end.** Earlier status (2026-11-03, end of round 1): base = `v1-organizer` (47/100, winner on median total; tie with v1-trades broken on mean critic total 47.3 vs 46.7 and on structural lows). Weakest dimension: **Ceiling 2**. This file is the organizer variant verbatim, plus a section at the end recording what was carried in from the round-1 losers and what Round 2 must change.
 
@@ -202,3 +202,15 @@ No round-3 variant replaced this base (gift 43, journal 41, care 41). What round
 - **Do not sell a recurring fee on the artifact.** Frame buyers reject subscriptions (Nixplay ~1.2% paid). Price the vault as an optional annual keep-alive, not as the product. [research/family-artifact-market.md Q1]
 - **Institutional buyers pay little for life stories.** Current list prices run ~$9–18 per person per year. Senior living is a referral source for organizers, not a software market. [research/institutional-legacy.md Q3]
 - **A software-only private family photo network has not found a business model.** Aura's CTO says so on the record; Lalo shut in 2023 because "no one wanted to pay for this". [research/family-artifact-market.md Q1, Q2]
+
+
+---
+
+## Round-4 merge notes (2026-11-25)
+
+No round-4 variant replaced this base (data 33, frame 40, claims 39). What round 4 adds to it:
+
+- **Home displays now come from the platforms.** Amazon's Alexa Photo Frame (2026-10-28) and Apple's HomeView (2026-11-13) show shared family albums with a voice assistant beside them. The archive's output should land on those displays through shared albums; nothing here competes with them. [research/frame-device-market.md Q1]
+- **An evidence-linked export has real uses.** A dated, per-item export with the source photo attached is what a contents claim needs. Keep it as an export format of the archive, not as a product: a funded team gives the core step away. [research/contents-claims.md 2.4]
+- **Do not plan on data licensing.** Individuals' still photos have no disclosed buyer; the one disclosed program (GoPro, video) yields at most $4 per opted-in hour. [research/ai-data-licensing.md]
+- **Pain is highest where a document with money attached is due.** The claims probe scored the first Pain 6. Organizer projects tied to an estate, a move or a claim deadline are the ones to lead with. [critiques/v4-claims-r4-*.md]

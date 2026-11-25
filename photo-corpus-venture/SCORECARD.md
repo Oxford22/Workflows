@@ -39,6 +39,9 @@ A score of 5 is used as a neutral placeholder in totals and flagged.
 | v3-gift (gifted photo memoir, AI interviewer) | 3 | 5 (5–6) | 5 (4–5) | 5 (5–6) | 3 (3–4) | 4 (4–4) | 3 (3–4) | 5 (4–5) | 6 (5–7) | 2 (2–2) | 5 [unknown] | 43 | critiques/v3-gift-r3-*.md |
 | v3-journal (printed family journal from every phone) | 3 | 5 (4–5) | 6 (5–6) | 3 (3–4) | 3 (3–4) | 4 (4–4) | 3 (3–4) | 4 (4–4) | 6 (6–6) | 2 (2–2) | 5 [unknown] | 41 | critiques/v3-journal-r3-*.md |
 | v3-care (legacy program for senior living and hospice) | 3 | 4 (4–4) | 4 (4–4) | 5 (4–5) | 3 (3–4) | 4 (3–4) | 3 (2–3) | 5 (4–5) | 6 (5–6) | 2 (2–2) | 5 [unknown] | 41 | critiques/v3-care-r3-*.md |
+| v4-data (consented camera-roll licensing to AI builders) | 4 | 3 (3–3) | 3 (3–3) | 4 (4–4) | 2 (2–3) | 3 (3–3) | 2 (2–3) | 4 (3–4) | 5 (5–5) | 2 (2–2) | 5 [unknown] | 33 | critiques/v4-data-r4-*.md |
+| v4-frame (gift frame that interviews the elder) | 4 | 5 (5–5) | 5 (4–5) | 5 (4–5) | 2 (2–2) | 4 (3–4) | 3 (3–3) | 4 (4–4) | 5 (5–5) | 2 (2–2) | 5 [unknown] | 40 | critiques/v4-frame-r4-*.md |
+| v4-claims (insurance contents claim from the camera roll) | 4 | 6 (6–6) | 5 (5–5) | 4 (4–5) | 3 (2–3) | 2 (2–2) | 3 (2–3) | 4 (4–5) | 6 (5–7) | 1 (1–1) | 5 [unknown] | 39 | critiques/v4-claims-r4-*.md |
 
 Cell format: median (min–max) across the three critics. Totals use medians; founder fit is a flagged neutral 5.
 
@@ -144,5 +147,17 @@ What did improve: all three scored Buildability 6 with no Apple or Google depend
 
 Fifteen variants in, every consumer family-memory software variant caps at roughly $5–45M on evidence.
 
+## Round 4 evidence summary (probes outside the family-pays-for-memories model)
+
+Top total after round 4: **47 (v1-organizer, unchanged)**. Rounds without improvement: **3**.
+
+| Variant | Its own honest ceiling | The fact that capped it | Pointer |
+|---|---|---|---|
+| v4-data (33) | ~$4M gross a year for about three years | The best-positioned seller already holds this asset and walked away from it: Kled (500,000 claimed contributors, a 200M-file consented camera-roll corpus, $10M raised) moved its home screen off camera-roll upload on 2026-09-30 because it "could only collect the data people already had, not the data labs actually needed", and pays $0.01 a photo. Nobody has disclosed revenue from licensing individuals' still photos. Shutterstock's data offering fell 60% over nine months of 2026. The law removes people, children and bystanders, which is most of a camera roll | critiques/v4-data-r4-*.md; research/ai-data-licensing.md bottom line, Q2–Q4 |
+| v4-frame (40) | ~$6M at the centre, nearly all one-time hardware | Amazon shipped an Alexa Photo Frame with microphones on 2026-10-28 ($199.99 list, $114.99 on Black Friday) and is reported to be adding on-frame recording; Apple shipped HomeView on 2026-11-13 ($299) with a shared-album photo frame beside Siri AI. A seed round buys one 5,000-unit run that reaches shelves about a year after both. No frame has measured an elder answering | critiques/v4-frame-r4-*.md; research/frame-device-market.md bottom line, Q1, Q3 |
+| v4-claims (39) | $0.5–4.8M | Bevel (founded January 2025, $6M seed) already turns old family photos into a priced inventory for free and says over 25% of Los Angeles fire survivors used it; Loti gives away the same step. California, Colorado and Oregon now pay 60–70% of contents limits without itemization. Nobody was found paying a stand-alone fee for inventory help. First Pain score of 6 in the search: a named dollar amount depends on the document | critiques/v4-claims-r4-*.md; research/contents-claims.md bottom line, 2.2, 2.4 |
+
+One fact worth keeping from the data track: GoPro disclosed $2M of AI content-licensing revenue in Q2 2026 from subscribers' opted-in video, sharing 50% with them. It is the first disclosed revenue from individuals' personal media, it is video, and it works out to at most $4 per opted-in hour.
+
 ## Weakest dimension (drives next round)
-**Ceiling (2 on the leader and on all three round-3 variants).** Round 4 leaves the consumer family-memory subscription entirely and probes three places where large money is evidenced and the buyer is not a family paying for memories: (1) AI model builders paying for consented, rights-cleared camera-roll data; (2) the hardware gift frame itself, with the elder interview built in; (3) the insurance contents claim, where a household's pooled camera rolls are evidence worth tens of thousands of dollars.
+**Ceiling (2 on the leader; 1–2 on all three round-4 probes).** Eighteen variants are scored. Round 5 is the last divergent round and covers the three regions still untested: (1) selling the consolidation job as a **done-for-you service** at a fixed price, the one model in this space with a scaled comparable (mail-in digitization: Legacybox "over 2 million families"); (2) **professional photographers' archives**, a paid-for corpus that already lives outside Apple and Google; (3) **group and event corpora** (teams, schools, weddings), where many camera rolls hold one shared story and an organization or host pays. Rounds 6–8 then converge on the best survivor and attack its weakest dimensions.

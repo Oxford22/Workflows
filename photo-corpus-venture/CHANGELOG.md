@@ -133,3 +133,31 @@ Round 4 therefore leaves the family-pays-for-memories model and probes three pla
 ### Walls hit
 - Container restart on 2026-11-25 cost one workflow run. From here every completed step is committed and pushed before the next begins.
 - sec.gov, Similarweb, several French registries and print-quote calculators block automated clients; those facts are tagged secondary or [unknown] in the files.
+
+## Round 4 — 2026-11-25 — Probes outside the family-pays-for-memories model
+
+### What happened
+- Three research tracks, each audited and repaired: `research/{ai-data-licensing,frame-device-market,contents-claims}.md`. Audit findings are in `research/audits/r4-*.json`.
+- Three probes where large money is evidenced and the buyer is not a family paying for memories: `v4-data` (AI builders pay for consented camera-roll photos), `v4-frame` (a gift frame with the elder interview built in), `v4-claims` (the insurance contents inventory from pooled camera rolls).
+- Nine fresh-context critics. Median totals: frame 40, claims 39, data 33. **No variant beat `v1-organizer` at 47.** Rounds without improvement: 3.
+- The first run hit usage limits after research, audits and variants had finished; the three repairs and nine critics were re-run from the saved audit findings.
+
+### What we learned
+1. **AI builders do not want existing camera rolls.** Kled built exactly this supply side (500,000 claimed contributors, a 200M-file consented corpus, $10M raised) and on 2026-09-30 moved its home screen to paid capture tasks because the corpus was "the data people already had, not the data labs actually needed". It pays contributors $0.01 a photo. Shutterstock's data-licensing offering fell 60% over the first nine months of 2026. Photobucket never closed a licence and was sued. The one disclosed program built on individuals' personal media is GoPro's: $2M in Q2 2026, video only, at most $4 per opted-in hour.
+2. **The platforms shipped the family photo display this autumn.** Amazon's Alexa Photo Frame (announced 2026-10-28) is a 10-inch gift frame with microphones and voice photo search at $199.99 list and $114.99 on Black Friday; a reviewer reports on-frame recording "is coming later". Apple's HomeView ($299, on sale 2026-11-13) turns a shared album into a "living photo frame" next to Siri AI. No elder-focused device has a sourced revenue above $10M. A seed round buys one small production run.
+3. **The contents claim is painful, small and already served free.** Bevel, founded in January 2025, extracts and prices items from old family photos at no charge, says over 25% of Los Angeles fire survivors used it, and then raised $6M to become an insurance brokerage. California now pays 60% of contents limits without itemization, Colorado 65%, Oregon 70%. In Florida, a person who only photographs or inventories property is outside the public-adjuster definition; a percentage fee still makes the seller an adjuster in most states.
+4. **Pain reached 6 for the first time**, in the claims probe, because a named dollar amount depends on a document with a deadline. That is a lesson about which organizer projects to lead with, not a business.
+
+### Decision
+`variants/current.md` keeps the organizer workbench as base, with round-4 merge notes appended. All three probes go to GRAVEYARD with salvage notes.
+
+Eighteen variants are now scored. Three regions near the seed remain untested, and Round 5 covers them as the last divergent round:
+1. The consolidation job sold as a **done-for-you service** at a fixed price. Families do pay services at moments (scanning orders, organizers), and mail-in digitization is the one model here with a scaled comparable.
+2. **Professional photographers' archives**: a corpus that already lives outside Apple and Google, owned by people who pay monthly for AI tools.
+3. **Group and event corpora**: teams, schools, weddings, where many camera rolls hold one shared story and an organization or host pays.
+
+Rounds 6–8 then converge on the best survivor and attack its weakest dimensions with targeted research.
+
+### Walls hit
+- Usage limits stopped the first run of this round. Research, audits and variants were already on disk and committed; only repairs and critics were repeated.
+- Amazon search and review pages, Wirecutter, Kickstarter and several registries refuse automated reading; affected facts are tagged secondary or [unknown].
