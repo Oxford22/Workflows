@@ -1,0 +1,152 @@
+{
+ "untagged_numbers": [
+  "L7 (bottom line): \"frames at $59–149 with no subscription already do the 'photos to grandma' job\" — price range carries no tag on this line.",
+  "L8 (bottom line): \"It supports a €2–15M business in a decade ... unless the US reaches French penetration at 1.7× the French price\" — neither the €2–15M range nor the 1.7× ratio is tagged; 1.7× divides $9.99 by €5.99 although L10 says no FX is applied.",
+  "L25: \"Estimators disagree by 25×\" — untagged and not reproducible from the figures listed ($3.7M vs $100M = 27×; vs $50M = 13.5×; vs $40.9M = 11×).",
+  "L49: \"Adult children pay $60–500 once to put family photos in a grandparent's home\" — range untagged on the line (only the retail-title quote is tagged).",
+  "L83: \"print $2.50 [assumption], postage $2.27, card fees $0.60 [assumption: ~3% + $0.30]\" — '[assumption]' is not one of the README tags and the $2.50 print cost has no method or source; it drives the only gross-margin figure (46%).",
+  "L84: \"vs €4.99 ex-VAT list\" — the €4.99 presumes 20% VAT on €5.99; the VAT rate is not stated or sourced and the attached [estimated] method does not cover it.",
+  "L106: \"43% of 75+ owned a smartphone in 2021 [sourced-secondary: search summary of Pew 2021; not verified at source]\" — tag has no URL.",
+  "L108: \"~6.5 billion cards and $7–8 billion a year in the US [sourced-secondary: Greeting Card Association figures repeated on trade sites; original date old]\" — no URL, no date.",
+  "L116: \"Snapfish app offers 100 free 4×6 prints a month ... FreePrints Photobooks one free 20-page softcover a month [sourced-secondary: via search]\" — no URL.",
+  "L116: \"Shutterfly closed Groovebook (2022) and folded Tiny Prints (2026) [S32, S39]\" — bare source keys, no tag type.",
+  "L122: \"Timeshel has 308 ratings in twelve years; Chatbooks cancelled 150K subscriptions in 2025 ... [S32, S37, S41, S5, S30]\" and \"Famileo has grown every year for ten years and Neveo is profitable [S19, S26]\" — bare keys; 'every year for ten years' is supported by no source (revenue points exist only for 2020, 2023, 2024, 2025).",
+  "L123: \"Nixplay's attempt to add a fee produced ~1.2% paid and a lawsuit [S14, S16]\" — bare keys on an estimated figure.",
+  "L125: \"ten years and a care-home seed channel to reach 280,000 in France; +9% growth now; 2% US/France rating ratio\" — restated without tags.",
+  "Comparables table, Skylight row: \"'10MM+ devices'; 1.7M Calendar families/month [S9, S10]\" and \"Plus $39 / $79 per yr [S11]\" — bare keys ($39 is snippet-only per L38).",
+  "Comparables table, Nixplay row: \">2.5M frames (allegation) [S16]\" — bare key.",
+  "Comparables table, Chatbooks row: \"[unknown]; estimators $3.9–20M\" — no tag in cell.",
+  "Comparables table, Timeshel row: \"[unknown]; 308 iOS ratings\" — no tag in cell.",
+  "Comparables table, Groovebook row: \"18,000 (Jan 2014)\" and \"[unknown]; sold for $14.5M\" — no tag in either cell.",
+  "Numbers table row 11: \"2.5M accounts, 643,000 MAU (Dec 2021)\" — appears only in the numbers table, never in the body (it is in the Nixplay circular; verified).",
+  "Numbers table row 13: \"73.77% holding\" — orphan number with no explanation anywhere in the body (complaint: Nixplay Inc. owns 73.77% of the Cayman operating company).",
+  "Numbers table row 7: \"Famileo 60K, 1M+\" (Play) — appears only in the numbers table."
+ ],
+ "suspect_claims": [
+  {
+   "claim": "Famileo €15.3M revenue in 2025, \"growing ~9%/yr\" (bottom line, Q2, comparables, largest-journal-revenue statement) [sourced-secondary: S25; estimated 15.3 ÷ 14.0]",
+   "problem": "The headline journal revenue was never read at source: all three Ouest-France URLs return HTTP 403, and two searches for the figure found nothing. The URL slug supports only the €16.5M 2026 target. The +9% divides an unread snippet by a rounded \"près de 14 millions\". A source the file already cites (S20, JDD, 2025-02-20) has the founder saying \"un chiffre d'affaires d'à peu près 15 millions d'euros\", which the file omits; on that base growth is nearer 2% than 9%. S18 also shows 2025 was forecast at €16M, so €15.3M would be a miss. The largest directly read figure is \"près de 14 millions\" (2024, S18).",
+   "severity": "major"
+  },
+  {
+   "claim": "Aura \"≥$56M/yr at retail value\" and \"implied connected frames ≈ 2.5M\" (Q1, comparables table revenue cell)",
+   "problem": "Presented as a floor (≥) but the method cannot give one. 10M \"people\" ÷ 4 contributors per frame is not a lower bound on cumulative frames sold, since people overlap across frames and owners are counted. Multiplying by the $149 list price ignores wholesale to Amazon/Best Buy and discounting (the site shows $139 today). It is the only Aura revenue-like number in the comparables table. Arithmetic reproduces (375k × $149 = $55.9M); the premise does not.",
+   "severity": "major"
+  },
+  {
+   "claim": "Skylight: \"now claims '$300M+' ... most of it from a kitchen calendar, not the grandparent frame\" and \"the nine-figure outcome (Skylight) came from moving off the grandparent frame\"",
+   "problem": "The $300M+ quote is real (Wellfound: \"scaled this business to $300M+ in annual revenue while being completely bootstrapped and profitable\") but the listing is undated. The file's own S10 (2026-07-31, president quoted) says \"more than $500 million in annual revenue\"; the two company claims differ by 67% and are not reconciled, and the largest-revenue statement leads with the lower, undated one. The calendar-led mix is asserted as fact while the file marks Frame-vs-Calendar split [unknown]; Skylight was already $30M in 2019 and $75M in 2021 on a calendar launched in 2020. Forbes Brasil (S8) also says 2022 sales were planned flat and the user base was 5 million; both omitted. All Skylight revenue is unaudited company claim or press.",
+   "severity": "major"
+  },
+  {
+   "claim": "Chatbooks churn: \"49,000 active subscriptions churned\" (2024); \"150K subscriptions canceled in 2025\"; cancellation rate \"86% of sub orders\" → 66% [sourced-secondary: S30]",
+   "problem": "Quotes match the page, but the whole Chatbooks churn case is one designer's self-published portfolio. The 86%/66% is the share of subscription orders entering the cancel flow that completed cancellation (\"across 69,000+ sub orders in the measurement period\"), not a subscriber churn rate; the numbers table lists it as \"86% → 66%\" with no denominator. 49,000 (2024) against 150K (2025) is a threefold jump the file does not question. Q7 leans on \"Chatbooks cancelled 150K subscriptions in 2025\" as falsification evidence without any subscriber base to compare against.",
+   "severity": "major"
+  },
+  {
+   "claim": "\"The US shows no journal traction\" / Famileo US \"traction is negligible\" (110 US iOS ratings vs 5,322 France); \"No US senior-living operator announcing Famileo was found [unknown]\"",
+   "problem": "Rating counts verified (110 / 5,321 today), but storefront rating count is an unvalidated proxy stated as a finding; Famileo itself claims \"4,8/5 from 42,000 reviews on App Store and Google Play\". The senior-living statement is contradicted by the file's own S23: the Famileo Pro US page carries testimonials from Welch Senior Living (\"Duxbury House at the Village\") and \"The Lakes of Monclova\". Hug Letters' page shows a TODAY Show Deals placement, also unreported. US traction is thin but not evidenced as zero.",
+   "severity": "major"
+  },
+  {
+   "claim": "Unit-economics scenario: \"print $2.50 [assumption] ... COGS $5.37, gross margin 46% at $9.99\"",
+   "problem": "The only gross-margin figure in the file rests on a print cost with no source, quote or method. Postage uses retail single-piece flats ($2.27) although the cited Notice 123 also publishes commercial, Marketing Mail and Periodicals flats prices that the file says it did not read. The 46% is arithmetic on an invented input.",
+   "severity": "major"
+  },
+  {
+   "claim": "Nixplay FY2022/FY2023 figures: revenue $30,487,490 / $20,038,285, net loss $7,557,913 / $5,023,536, Plus \"approximately 10,000\" (+31%), 3.5M users → ~42,300 subs, ~1.2% paying [sourced: S14]",
+   "problem": "Could not be verified: sec.gov returns 403 \"Undeclared Automated Tool\" to both a browser and a generic client user-agent, and one search found no copy. Only loose corroboration exists (complaint: \"revenues of over $30 million in 2022, and over $20 million in 2023\"). FY2020/2021 figures were verified through a mirror of the issuer's Form 1-A. The 42,300 and 1.2% derivations are arithmetically correct but depend on the unverified inputs.",
+   "severity": "minor"
+  },
+  {
+   "claim": "\"Estimators disagree by 25×\" (Aura)",
+   "problem": "Not reproducible from the listed values (27×, 13.5× or 11× depending on which top figure is used).",
+   "severity": "minor"
+  },
+  {
+   "claim": "\"Neveo is ~€2M [sourced: S26]\" (bottom line, present tense)",
+   "problem": "Stale. The article (2024-01-19) says \"a affiché l'an dernier un chiffre d'affaires de 2 millions d'euros\", i.e. 2023. Nearly three years old; 2024–2026 is [unknown] by the file's own admission. The €11.99 price is also superseded (€12.99 today).",
+   "severity": "minor"
+  },
+  {
+   "claim": "Google Premium Print Series \"Status: alive\" at \"$6.99/month\"",
+   "problem": "Alive is inferred only from a live help page, which states no price. The $6.99 comes from October 2020 coverage. The file itself notes Fujifilm took over the Google Photos print store (rolled out August 2026) without checking whether the subscription survived that. One search found no 2025–2026 confirmation either way.",
+   "severity": "minor"
+  },
+  {
+   "claim": "\"Famileo has grown every year for ten years\" (Q7 counter-evidence)",
+   "problem": "No source says this. Revenue points exist only for 2020, 2023, 2024 and 2025; family counts read 260,000 in both February 2025 (S20) and December 2025 (S18), i.e. flat across ten months.",
+   "severity": "minor"
+  },
+  {
+   "claim": "US scenario \"1.4M families × $120/yr ≈ $168M\" and \"1.7× the French price\"",
+   "problem": "Uses 280,000 total families although the file states only 220,000+ are paying B2C (care-home families get it free); on the B2C base the same arithmetic gives about $132M. The 1.7× compares dollars to euros with no FX despite the stated no-FX rule.",
+   "severity": "minor"
+  },
+  {
+   "claim": "Famileo \"70% of subscriptions from word of mouth\"; \"On marge peu, mais notre stratégie, c'est le volume\" [sourced: S24]",
+   "problem": "Both sit in an older passage of an undated portrait that gives \"700 000 utilisateurs\" (versus about 2 million now); presented without a date. The same page states 2022 target revenue of €10M and the three funding rounds directly, yet the file tags the rounds \"via search summary\" and omits the €10M point. The 175,000 families / 1.2M users figure (S25) is also undated.",
+   "severity": "minor"
+  },
+  {
+   "claim": "Amazon unit sales: Frameo $59.48 at ~9,000/month, Aura 7,000/month, Skylight 5,000/month; \"$59.48 Frameo frames lead Amazon unit sales\" (Q7 commoditisation)",
+   "problem": "Estimator-only (Asinsight, July 2026; page matches the figures). The file says estimators are \"never relied on alone\", but the commoditisation conclusion's unit-volume leg rests on this single estimator, a single month, and a non-holiday month.",
+   "severity": "minor"
+  },
+  {
+   "claim": "Hug Letters price \"[unknown]\" (comparables table)",
+   "problem": "The cited page (S49) prints \"$14.99 / month ... 30 photos per journal\". Marked unknown without reading the page.",
+   "severity": "minor"
+  },
+  {
+   "claim": "Aura \"Seasonality: no Aura figure\"; gift share \"[unknown]\"",
+   "problem": "The cited about page (S4) states \"#1 U.S. App Store on Christmas Day (2025)\", \"4 average contributors per frame\" and \"1B+ photos and videos shared in 2025\"; none is reported. The Christmas Day ranking is direct company evidence of gift-driven seasonality.",
+   "severity": "minor"
+  },
+  {
+   "claim": "Review evidence on auto-selection quality (thegoodfinds.co, justuseapp.com, tomsguide.com) and FamilyAlbum auto monthly book at $7.99",
+   "problem": "All from search summaries, \"not re-read\"; the FamilyAlbum page returned 429. The brief asked for reviews by URL; none was opened, so the quoted sentence is unverified.",
+   "severity": "minor"
+  }
+ ],
+ "sources_checked": 33,
+ "sources_broken_or_misquoted": [
+  "S13 https://www.sec.gov/Archives/edgar/data/1946957/000168316823001615/nixplay_253g2.htm — HTTP 403 (SEC 'Undeclared Automated Tool') with browser and generic user-agents. Claim verified instead via a mirror of the same issuer's Form 1-A: \"The Company generated revenues of $57,865,975 for the year ended December 31, 2021, a 4.2% increase compared to $55,521,838\"; also 51% Amazon / 9% Best Buy, 84% third-party, 37.6% → 37.0% gross margin, seasonality sentence. SUPPORTED, but not at the cited URL.",
+  "S14 https://www.sec.gov/Archives/edgar/data/1946957/000168316824002773/nixplay_1k-123123.htm — HTTP 403; no mirror found; one search found nothing. FY2022/2023 revenue, net loss, Plus +10,000 (+31%) and 3.5M users NOT VERIFIED.",
+  "S25 agence-api.ouest-france.fr (three URLs) — HTTP 403 error page. €15.3M (2025), €3.5M (2020), 175,000 families and FY2020 break-even NOT VERIFIED; two searches did not surface 15.3. Only the slug confirms a €16.5M 2026 target.",
+  "S9 https://wellfound.com/company/skylight-9 — SUPPORTED: \"scaled this business to $300M+ in annual revenue while being completely bootstrapped and profitable\"; \"10MM+ devices\". Undated; the page also shows a 'Recently funded — raised funding in the past six months' badge the file does not mention.",
+  "S18 bretagne-economique.com (2025-12-12) — SUPPORTED: \"En 2024, Famileo a généré près de 14 millions d'euros de chiffre d'affaires et prévoit d'atteindre 16 millions en 2025\"; 260 000 familles; 2 700 établissements; 70 salariés.",
+  "S19 bigmedia.bpifrance.fr (2026-06-12) — SUPPORTED: \"plus de 275 000 familles\"; \"le B2C représente un peu plus des trois-quarts de son chiffre d'affaires, avec plus de 220 000 familles\"; \"plus de 2,5 millions de gazettes envoyées en 2025\"; M6 \"à hauteur de 5 %\"; €5,99 \"numéro d'équilibriste\".",
+  "S20 lejdd.fr (2025-02-20) — supports 260 000 grands-parents, 1,8 million users, 65 employés; the file OMITS the same sentence's \"chiffre d'affaires d'à peu près 15 millions d'euros\", which conflicts with its +9% growth figure.",
+  "S26 lalibre.be (2024-01-19) — SUPPORTED verbatim: 20 000 abonnés at 11,99 €, 100 000 senders, 50 millions de photos, \"chiffre d'affaires de 2 millions d'euros, dont 80 %\" francophone, profitable since end-2021, five printers.",
+  "S3 / S1 / S2 techcrunch.com — SUPPORTED: \"1 million frames sold (it's now at 997,000)\"; \"has sold 'single-digit millions' of frames and is profitable\" with correction note; $60M LAGO; \"profitable in 2024\"; 784 million photos, +55%; 50% of 2024 sales.",
+  "S8 forbes.com.br (2022-12-24) — SUPPORTED: US$2M (2018), US$30M (2019), US$75M (\"receita de 2021\"), \"sem investidores\". Omitted by the file: user base 5 million; 2022 sales planned flat.",
+  "S10 thenewthings.com (2026-07-31) — SUPPORTED: \"1.7 million families use a Skylight Calendar every month, and the company is pulling in more than $500 million in annual revenue\".",
+  "S23 famileopro.com/en-us — supports 2,700+ and \"Starting at $99/month per community\" (≤50 beds), $75 TV box, six-month auto-renew. CONTRADICTS the file's 'no US senior-living operator found': the page carries testimonials from Welch Senior Living (Duxbury House) and The Lakes of Monclova.",
+  "S49 hugletters.com — supports \"Loved by 1,000+ families\"; the page also prints $14.99/month, which the file lists as [unknown].",
+  "S30 leighamiceli.design/cancellation — quotes match, but 86% → 66% is the completion rate of the cancel flow over \"69,000+ sub orders\", not subscriber churn.",
+  "S24 bigmedia.bpifrance.fr portrait — supports \">13 millions\" (2023), 70% word of mouth, and the three funding rounds directly; the file mis-tags the rounds as 'via search summary' and presents an older passage undated.",
+  "S46 AARP — figures SUPPORTED (65 million, $2,654, n=3,283, 29% / 11%, 60/55/46/34/13%, 76%). Date detail: the landing page reads 'Updated November 17, 2026' and fieldwork was Nov 18–Dec 22, 2025; the file labels it 'June 2026'.",
+  "S40 support.google.com/photos/answer/9690421 — live and supports 10 prints, 4×6 card stock, US-only, 5-day window; states no price, so $6.99 and 'alive' are not confirmed by it.",
+  "S39 thedeadpixelssociety.com — paywalled; only headline and publication metadata (2026-06-03) readable, as the file states. tinyprints.com redirect to shutterfly.com confirmed.",
+  "Fully supported as stated, no issue: S4 (Aura prices, 'No subscription fees', 10M+ people, Best Buy pickup), S5 (all iOS rating counts within ±60 of file values), S7, S16 (complaint PDF: 0.5 GB, >2.5M frames, >2.2M customers, 73.77%), S17, S21 (US and FR prices, 280,000), S22, S27, S29, S32, S34, S41, S43 ($7.00; $0.20 per extra page is on /pricing), S44 (USPS flats $1.69/1.98/2.27/2.56, letter $0.82, effective October 04, 2026), S47 (65+ smartphone 79%, non-smartphone cellphone 14%), S48."
+ ],
+ "missing_vs_brief": [
+  "Q1 Aura: retail distribution answered [unknown] with only the own-site Best Buy pickup noted; no evidence of checking Target, Costco, Walmart or Amazon. Seasonality answered 'no Aura figure' despite the cited about page stating #1 U.S. App Store on Christmas Day 2025. Revenue provenance from Inc./founder interviews not shown as tried beyond TechCrunch.",
+  "Q1 Skylight: Calendar hardware price points absent (only the Frame at $139.99 and the Plus fees). 2025–26 products (Calendar 2, named on the cited Wellfound page) not covered. Retail distribution not covered. Frame Plus price and gating from a search snippet only. The $300M+ versus >$500M claims are not reconciled.",
+  "Q1 Nixplay: ownership is not stated in the body (only an unexplained '73.77% holding' in the numbers table; the CEO's stake is not mentioned). Subscription tiers and prices from a search snippet only. Frame price points absent. 2024–2026 revenue [unknown].",
+  "Q2 Famileo: churn, profit and per-gazette cost [unknown] with the French company registry explicitly 'not attempted'. US launch date not given. US subscriber and partner counts [unknown] although the Famileo Pro US page names US communities. The 2020 revenue, 175,000-family point and 2025 revenue rest on unread Ouest-France snippets.",
+  "Q2 Neveo: 'same facts' not delivered — no care-home channel finding, no price by country (USD/GBP), no user count beyond 2024; Belgian annual accounts (NBB) explicitly 'not attempted'.",
+  "Q2 Recently: current price and subscription status [unknown] after a single 403; no fallback (App Store in-app purchase list, archive copy) recorded.",
+  "Q2 Chatbooks: 'subscriber count never disclosed' asserted without recording searches; Monthly Minis not mentioned; revenue estimator-only.",
+  "Q2 Lalo, Kindred, Tiny Prints, Groovebook: Lalo is one line with no funding, users or outcome. 'Kindred' resolved only as Kindred Prints with reason [unknown]. Tiny Prints 'absorbed' from a paywalled headline with no reason. Groovebook's cause of death is the file's inference, not a sourced reason. The 'why' the brief stressed is largely missing.",
+  "Q3: of the six print-on-demand vendors named, only Blurb's list price was read; Mixam comes from a Substack mention; Peecho, Lulu, Gelato and Cloudprinter are [unknown] ('JavaScript calculators') with no browser or RFQ attempt. USPS commercial, Marketing Mail and Periodicals flats rates are [unknown] although the cited Notice 123 contains them and the file says it read 'retail flats only'. No operator gross-margin figure; the only margin (46%) rests on an unsourced $2.50 print assumption.",
+  "Q3 churn/retention: Famileo and Neveo [unknown]; Chatbooks from one unverified portfolio page.",
+  "Q4: Apple Memories not addressed (only 'Apple Intelligence' through Recently's listing). Google Photos auto-suggested photo books not addressed separately from the print subscription. Review quality 'by URL' comes from search summaries, not re-read. FamilyAlbum auto photobooks from a 429 page via search.",
+  "Q5: print preference of older adults [unknown]. 75+ smartphone share for 2026 [unknown] (the upstream file also has only 65+); the 2021 fallback of 43% is unverified and has no URL. Greeting-card figures undated with no URL. Photo-gift spend for grandparents [unknown]. Senior-living mail programmes covered only through search summaries.",
+  "Q6: Walgreens is absent entirely. Shutterfly's current recurring-print offer and Amazon Photos print status are [unknown] with no attempt recorded. Snapfish and FreePrints offers come from search with no URL. MIXI photo-product revenue share [unknown] (unlabelled chart; reasonable). Google Premium Print Series status and 2026 price not confirmed beyond a live help page.",
+  "Q7: no retention or churn figure for any third-party-gift journal, so the 'gifts survive, self-purchases churn' explanation is argued, not evidenced. Frame commoditisation rests partly on one estimator month.",
+  "Output: comparables table present but omits FamilyAlbum prints, FreePrints/Shutterfly, Fizzer, NanaGram and Lalo. The largest-sourced-revenue statement for frames omits the >$500M Skylight claim the file cites elsewhere; the journals line is headed by the unverifiable €15.3M."
+ ],
+ "verdict": "needs_fix"
+}

@@ -1,0 +1,134 @@
+{
+ "untagged_numbers": [
+  "L4: \"not the $59 / $109 / $199 taken from an affiliate page in `competitive.md`\" -- no tag on the superseded prices.",
+  "L29: \"If the last 12 months were 15–25% of lifetime books (assumption) ... and 0.5–1.0 books are printed per paid plan (assumption) ... at ~$90 net\" -- three driver numbers with no basis beyond the word 'assumption'; they produce the headline $13.5M–$45M.",
+  "L55: \"an unnamed comparison page in a search snippet gave $899–$1,799 (unverified)\" -- no tag, no URL.",
+  "L56 and comparables row: \"$149 per interview per prior research (`competitive.md`)\" -- no tag (competitive.md L221 has it as [sourced: heyartifact.com, undated]).",
+  "L100: \"Deepgram: $11.70; **$13.88** with Twilio. ElevenLabs: $12.48; **$14.66** with Twilio (LLM pass-through not checked).\" -- no [estimated] tag (arithmetic is correct).",
+  "L101: \"Retell: $10.92–$48.36; $17.16 at the example rate.\" -- no [estimated] tag (arithmetic is correct).",
+  "L114: \"Qeepsake ≈ 21% annual churn\" -- no tag, only a pointer to grandparent-loop.md (where it is [estimated: 1 − 0.79]).",
+  "L116: \"A $30 CAC at a $25 CPM needs 0.83 orders per 1,000 downloads\" -- the $30 CAC is a hypothetical with no tag.",
+  "L125: \"several AI-memoir apps with 0–26 ratings [sourced: S60]\" -- apps unnamed, so the range cannot be reproduced.",
+  "L148: \"cumulative ≥ $7.62M [estimated]\" -- tag has no method on that line.",
+  "Tags that resolve to no URL or S#: L53 \"Packages from $3,250 [sourced-secondary: review-blog title via search]\"; L53 \"unrefunded deposits [sourced-secondary: Trustpilot via search snippet]\"; L59 \"$4M pre-seed [sourced-secondary: 2024 press via search snippet]\"; L60 \"$99 one-time [sourced-secondary: review page via search snippet]\"; L66 \"left the legacy category in November 2025 [sourced-secondary: competitor page via search snippet]\"; comparables \"2024 launch [sourced-secondary]\".",
+  "Bare [S#] with no sourced / sourced-secondary class: L30 \"35M (Feb 2026 [S10]) to 40M (by Jul–Nov 2026 [S4, S1])\"; L42 \"'February 2025' [S21]\"; L50 \"homepage shows 4.9 [S11]\"; L115 \"'86%' margin ... [S18]\"; L124 \"80% five-star across 65,513 reviews [S14]\"; comparables cells such as \"2013 (YC W2011) [S2, S7]\", \"$69 / $99 / $199; renew $99 [S1]\", \"$21,000–$51,000 [S26]\", \"$9.99/mo; $99/yr; $119 box [S28]\", \"$39 / $129 / $219; $10/hr extra [S29]\", \"$99 one-time or $16/mo [S30]\". S10, S14 and S18 are secondary sources, so the bare form hides their class."
+ ],
+ "suspect_claims": [
+  {
+   "claim": "L49, L124, numbers table: Remento completion proxy of ≈16 stories per order (1,000,000 stories ÷ 64,000 orders) against 52 prompts.",
+   "problem": "Mismatched dates. The $7M statement aired 2026-03-25 (Shark Tank S17 E15, per Rotten Tomatoes / Military.com via search); the 1M+ story count is the Nov 2026 homepage. The file's own source S19 gives a contemporaneous count it ignores: \"Remento recently celebrated recording more than 500,000 stories.\" Same-date ratio is ≈ 500,000 ÷ 64,000 ≈ 7.8, about half the published figure. The file uses the 16 as falsification evidence in Q8.",
+   "severity": "major"
+  },
+  {
+   "claim": "L33: Storyworth funding -- \"No priced round located ... amount raised [unknown]\".",
+   "problem": "One search contradicts the [unknown]. CB Insights financials page (fetched): \"StoryWorth has raised $150K over 2 rounds ... latest funding round was a Seed for $0.15M on January 28, 2011\", investors listed as Y Combinator and Felicis. It is an aggregator and needs an estimator label, but the brief asked for funding and the file reports none.",
+   "severity": "major"
+  },
+  {
+   "claim": "L36: \"TV and Facebook spend: [unknown — searched, nothing located]\".",
+   "problem": "TV as a channel is easily evidenced. iSpot.tv lists four Storyworth national TV spots (\"Dad: Every Family\" Jun 2021, \"Adrianne\" Apr 2022, \"Dear Dad\" Jun 2022, \"Mother's Day: Dear Mom\"). Tatari published \"How Storyworth Used TV Ads for a Successful Holiday Season\" (2023-09-29, fetched) with Head of Marketing Greg Kapp: \"Lowered CPV (cost per visitor) and CPA (cost per acquisition)\". Spend is unknown, but the channel and its Father's Day / Mother's Day / holiday timing are not.",
+   "severity": "major"
+  },
+  {
+   "claim": "L7, L29, comparables: Storyworth revenue \"roughly $14M–$45M a year [estimated]\".",
+   "problem": "Assumption stacked on assumption (15–25% of lifetime books in the last 12 months; 0.5–1.0 books per plan; $90 net), none evidenced, yet promoted to the Bottom line and the comparables table. The anchor \"Over 1,000,000 books printed\" is a floor that is probably stale: a search snippet shows the same \"Over 1 million books printed since 2013\" on an older Storyworth landing page headed \"HOLIDAY SALE: $15 OFF THROUGH DEC 31\" (a prior season; page now 404), and HNGN reported it in Apr 2026. Wayback was unreachable, so first-use date is unverified. Inconsistent rounding too: $14M in the Bottom line, $13.5M in the table.",
+   "severity": "major"
+  },
+  {
+   "claim": "L8: \"more plans in one year than Storyworth has printed books in its whole life [sourced: S1]\".",
+   "problem": "S1 says \"Over 1,000,000 books printed\", a floor. Comparing 1.1M to a floor of unknown true value is an inference, not a sourced fact; the tag overstates it.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L122, numbers table: storyworth.com \"603.8K visits over three months and −22.46% month-on-month\"; \"Direct = 55.65% of desktop visits\" (Similarweb, Aug 2026).",
+   "problem": "Estimator-only, snippet-only, suspiciously precise and not reproducible: similarweb.com returned HTTP 202 (bot wall) and a search for \"603.8K\" / \"22.46%\" found nothing. A Semrush snapshot found by the same search shows 405.69K–756.16K visits per month and 76.03% direct, so \"over three months\" is probably a misread monthly figure. This is the only traffic evidence behind the Q8 'not stalling' reading.",
+   "severity": "major"
+  },
+  {
+   "claim": "L7, L48, L148: largest sourced revenue = Remento \">$7 million in sales in under twelve months after its 2025 deal closed\"; cumulative ≥ $7.62M.",
+   "problem": "The quote is real (S19, S20 fetched) but the file never dates the statement: the episode aired 2026-03-25, so the figure is at least 8 months old and says nothing about the 2026 run-rate. \"2025 deal\" is the file's assumption; the source gives no closing date. Primetimer's own subhead calls it \"revenue\" while the founder says \"sales\"; gross vs net is unknown and it is unaudited. The $7.62M sum adds two non-adjacent periods.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L30: Scenario B \"≥ $11.5M–$20.8M\" from stories rising 35M (Feb 2026) to 40M (Jul–Nov 2026).",
+   "problem": "Neither counter is dated by Storyworth. The 35M comes from a TechTimes piece; Wikipedia only says \"as of 2026\". If 35M was already old site copy, the growth rate is overstated. Stories ÷ 52 is also not a strict floor on paid plans, because storytellers keep writing after the paid year (S1 FAQ: \"You'll have access to write ... even after your plan year has ended\").",
+   "severity": "minor"
+  },
+  {
+   "claim": "L37, L111, L31: S9 (HNGN, 2026-04-30) used as press for \"holiday gifting drives much of the company's annual customer acquisition\", \"typically as a gift\" and the 2014 $49 price.",
+   "problem": "The page footer reads \"This is a contributed article. The HNGN news staff was not involved in the creation of this article.\" It is placed/PR content, not independent reporting. The 2014 price was also \"$49 a year for six people\", which the lifetime-floor arithmetic ignores.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L11, L102: AI voice cost \"≈ $6–$22 per recipient-year, or 6–22% of a $99 price\".",
+   "problem": "The upper bound drops the file's own Retell ceiling ($48.36 at $0.31/min, about 49% of $99 before telephony). ElevenLabs $0.08/min excludes LLM cost (S40: LLM \"Based on usage and varies by model. At cost\"). The range also excludes chapter-writing LLM cost, retries and unanswered calls, which the file notes but does not price.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L83: \"None of the eight verified products runs an interviewer over the family's own photos\".",
+   "problem": "Three of the eight (MyHeritage, Ancestry, FamilySearch) were seen only as search snippets, by the file's own account, so 'verified' overstates it. One search surfaced unexamined candidates: a \"Storied\" iPad app pairing photos with voice recording and AI transcription, LifeScribe AI \"Photo Story Chapters\", Golden Record, KeepOfEchoes. Vivid-Pix Memory Station, Artifcts and Kinsome were not checked. The gap claim is plausible but under-tested.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L64-65, comparables: HereAfter AI \"Offline 2026\"; StoryFile \"$1.5M assets against $10.5M liabilities; assets sold to Key 7 Investment in 2025\".",
+   "problem": "Both rest on one competitor's pages (afterlife.ai), which has a commercial interest. The HereAfter page itself says \"Web app, app.hereafter.ai: Still loads the HereAfter web app, October 1, 2026\", which the file omits. hereafter.ai does return 404 (confirmed).",
+   "severity": "minor"
+  },
+  {
+   "claim": "L38: Trustpilot growth \"≈ 3,500 reviews in ~9 months [estimated: 65,513 − 62,000]\".",
+   "problem": "\"Over 62,000\" is a floor of unknown as-of date taken from PR-style articles, and 65,513 comes from a competitor's blog (S14, confirmed there). The difference is not a measured growth rate.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L50: Remento \"Trustpilot 4.8 from over 1,700 reviews\"; \"No native Remento app surfaced in the US App Store search [sourced: S60]\".",
+   "problem": "S11 homepage today says \"1,800+ 5.0 star reviews\" and 4.9; the inconsistency is unremarked. S60 (iTunes Search API) returned HTTP 403 here, so the no-app claim and all S60 ratings (StoryCorps 4.64 / 1,600; Storii Family 4.67 / 6) could not be re-verified.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L110: price points \"[sourced: S1, S11, S28, S29, S30]\" including Life-Story.ai at $99 and \"$179–$219 multi-person tiers\".",
+   "problem": "Life-Story.ai's $99 is sourced-secondary with no URL elsewhere in the file (L60) but sits under a [sourced] tag here. Tell Mel Premium at $219 is 24 interview hours, not a multi-person tier (S29).",
+   "severity": "minor"
+  },
+  {
+   "claim": "Comparables: Storyworth founded \"2013 (YC W2011) [S2, S7]\".",
+   "problem": "S7 (YC directory) says \"Founded: 2011\"; only S2 supports 2013. The \"13-year\" span used for the lifetime mean depends on which is right.",
+   "severity": "minor"
+  }
+ ],
+ "sources_checked": 49,
+ "sources_broken_or_misquoted": [
+  "No fabricated primary number found. Five most load-bearing claims all hold as stated: (1) S1 storyworth.com -- \"Over 1,000,000 books printed\", \"40M stories shared\", \"Basic $69 ... Color $99 $89 ... Unlimited $199 $179 ... $99 annual renewal - cancel anytime\". (2) S19 primetimer / S20 glam -- \"It's been less than a year since we closed our deal with Mark, and in that period of time, Remento has exceeded $7 million in sales.\" (3) S11 remento.co -- \"Unlimited recordings + hardcover book: All for $99\", \"renewing for either $99 /year or $12 /month\", \"1M+ stories recorded\". (4) S38 OpenAI -- \"gpt-live-1.1 $0.05 / minute $0.02 / minute\"; S39 Gemini 3.8 Live -- \"$0.005/min (audio)\" in, \"$0.018/min (audio)\" out; S44 Twilio -- \"Local calls $0.0140 / min $0.0085 / min\". (5) S45 NRF -- \"record $38 billion\", \"$284.25\", \"survey of 7,877 U.S. adult consumers\".",
+  "Also confirmed on the page: S2, S3, S4, S5, S7 (Team Size: 13), S12, S13, S14 (65,513 / 4.7 / 80%), S15, S16 (March 7 episode), S17 ($4 million total), S18 (recap figures), S21, S23, S24, S25, S26, S27, S28, S29, S30, S33, S35b, S35c, S36, S37, S40, S41 ($0.075), S42, S43, S46, S47, S48, S52.",
+  "S19 quoted selectively: the same article says \"Remento recently celebrated recording more than 500,000 stories\", which the file omits while using 1M+ for its stories-per-order ratio. The article gives no deal-closing date; \"2025 deal\" is the file's inference.",
+  "S50 similarweb.com/website/storyworth.com -- HTTP 202 bot wall; the 603.8K / −22.46% / 55.65% figures could not be found by search either. Unverified, and probably a unit error (see suspect claims).",
+  "S60 Apple iTunes Search API -- HTTP 403 from this environment; no app rating or 'no Remento app' claim could be re-verified.",
+  "S58d pubmed.ncbi.nlm.nih.gov/41941365 -- bot/cookie wall; '10 caregivers' not verified. S58a-c were snippet-only in the file and jmir.org returned 202 here.",
+  "S9 hngn.com is labelled 'press' in the source list but is a self-declared \"contributed article\" (HNGN staff not involved).",
+  "S7 YC directory says \"Founded: 2011\", but the comparables table cites it for a 2013 founding.",
+  "S34b afterlife.ai states app.hereafter.ai still loaded on 2026-10-01; the file reports HereAfter only as offline.",
+  "web.archive.org unreachable here (connection failed), matching the file's note; welcome.storyworth.com/pricing is 404 as the file says."
+ ],
+ "missing_vs_brief": [
+  "Q1 revenue provenance: [unknown] is defensible (my search also found no founder figure), but the file does not show that Indie Hackers, My First Million, How I Built This or Inc. lists were each checked by name; it lists generic query themes only. A Nick Baum interview on The Entrepreneur Way podcast (ep. 305) surfaced in one search and was not consulted.",
+  "Q1 funding: answered [unknown] although CB Insights lists a $150K seed on 2011-01-28 (Y Combinator, Felicis). Crunchbase / CB Insights / PitchBook were apparently not checked.",
+  "Q1 marketing channels: TV answered [unknown] despite iSpot.tv listings (2021–2022 spots tied to Father's Day and Mother's Day) and a 2023 Tatari case study on Storyworth's holiday TV strategy. Facebook: Meta Ad Library not tried. Storyworth's own footer links a 'Podcast' and the Wirecutter / AOL / WSJ placements come only from Wikipedia's reference list.",
+  "Q1 seasonality: Q4 / Mother's Day / Father's Day shares [unknown] with no proxy attempted (Google Trends, monthly traffic series, TV-spot timing).",
+  "Q1 customers and completion rate: [unknown]; only indirect signals. No review-mining of Trustpilot or BBB for unfinished books (Trustpilot blocked; BBB not tried, though S6 mentions an A- BBB rating).",
+  "Q2 Shark Tank: on-air revenue figures come from a low-quality recap site only; the air date of the $7M update (2026-03-25) is missing; the deal-closing date is missing; no 2026 traction statement after March 2026 other than the 1M+ stories counter.",
+  "Q2 app ratings: answered as 'no native app' on the strength of one API search that cannot be re-run here; Google Play not checked.",
+  "Q3 founded dates: [unknown] for Storii, Tell Mel, Life-Story.ai, Memorygram, A Life Untold, HereAfter AI, StoryFile, Eternos and No Story Lost, all of which are routine lookups; no evidence of trying.",
+  "Q3 StoryTerrace 'did it fail and why': why is [unknown]; the file admits the administrators' proposals at Companies House were not read. The $3,250 price has no URL.",
+  "Q3 LifeBook books sold: [unknown], replaced by a guess of 1,300–2,000 projects from a readers-per-package assumption.",
+  "Q3 No Story Lost, Vita, Memorygram and A Life Untold prices: [unknown] after a bot check or 404; no second route tried (search snippets, cached pages, review sites). Vita 'not located' with no search terms recorded.",
+  "Q3 Storii consumer vs care-home: only notes that the seller also publishes StoriiCare; no split, no pricing or traction for the care-home side.",
+  "Q3 Artifact price taken from prior research rather than re-verified; Autobiographer $4M pre-seed and Eternos pivot date cited without URLs.",
+  "Q3 'what do users say (reviews by URL)': no review of any AI phone interviewer (Storyworth Magic Interviews, Tell Mel). Only one review URL in the whole file (thingtesting). Reddit, Trustpilot, app-store review text and BBB all missing.",
+  "Q4: MyHeritage DeepStory / LiveStory, Ancestry Storymaker Studio and FamilySearch were not read directly (snippets only); no wider scan for photo-plus-voice products (e.g. Vivid-Pix Memory Station, Storied, LifeScribe AI, Artifcts, Kinsome).",
+  "Q5: OpenAI Realtime API given per token only, not converted to a per-minute cost; evidence on 70+ users is four small studies, three read only as snippets; no product-review evidence.",
+  "Q6: 'gifts for grandparents' category is marked \"[unknown — not searched separately]\" -- an explicit admission of not trying. No holiday per-person gift spend from NRF (only the $1.013T total), and no statement on gift share of Storyworth purchases beyond a contributed article.",
+  "Q7: year-2 renewal rate, CAC and Remento affiliate rate all [unknown]; Storyworth affiliate rate is from conflicting aggregator snippets with the Impact / FlexOffers pages unread; the Tatari CPA material was not found.",
+  "Q8: Storyworth traffic trend is one unverifiable Similarweb snippet with no multi-year series (Google Trends, Semrush not tried); 'complaints of unanswered prompts' and 'elders do not complete' rest on one review URL plus competitor-blog snippets; AI-memoir app churn [unknown] with unnamed apps as proxy.",
+  "Output: comparables table and largest-sourced-revenue statement are both present. The table has 9 of 17 'Founded' cells and most traction cells as [unknown]."
+ ],
+ "verdict": "needs_fix"
+}
