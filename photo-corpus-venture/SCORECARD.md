@@ -36,6 +36,9 @@ A score of 5 is used as a neutral placeholder in totals and flagged.
 | v2-genealogy (photo layer for family historians) | 2 | 5 (5–6) | 5 (4–5) | 5 (5–5) | 3 (3–4) | 4 (4–4) | 3 (3–4) | 6 (6–6) | 6 (4–6) | 3 (2–3) | 5 [unknown] | 45 | critiques/v2-genealogy-r2-*.md |
 | v2-grandparent (newborn/grandparent loop + archive) | 2 | 4 (4–5) | 4 (4–5) | 4 (4–4) | 3 (3–3) | 4 (4–4) | 4 (3–4) | 5 (5–5) | 5 (5–6) | 3 (2–3) | 5 [unknown] | 41 | critiques/v2-grandparent-r2-*.md |
 | v2-sdk (memory-product curation SDK, B2B) | 2 | 3 (3–4) | 3 (3–4) | 4 (3–5) | 2 (2–3) | 3 (3–3) | 2 (2–3) | 5 (4–5) | 6 (5–7) | 2 (2–2) | 5 [unknown] | 35 | critiques/v2-sdk-r2-*.md |
+| v3-gift (gifted photo memoir, AI interviewer) | 3 | 5 (5–6) | 5 (4–5) | 5 (5–6) | 3 (3–4) | 4 (4–4) | 3 (3–4) | 5 (4–5) | 6 (5–7) | 2 (2–2) | 5 [unknown] | 43 | critiques/v3-gift-r3-*.md |
+| v3-journal (printed family journal from every phone) | 3 | 5 (4–5) | 6 (5–6) | 3 (3–4) | 3 (3–4) | 4 (4–4) | 3 (3–4) | 4 (4–4) | 6 (6–6) | 2 (2–2) | 5 [unknown] | 41 | critiques/v3-journal-r3-*.md |
+| v3-care (legacy program for senior living and hospice) | 3 | 4 (4–4) | 4 (4–4) | 5 (4–5) | 3 (3–4) | 4 (3–4) | 3 (2–3) | 5 (4–5) | 6 (5–6) | 2 (2–2) | 5 [unknown] | 41 | critiques/v3-care-r3-*.md |
 
 Cell format: median (min–max) across the three critics. Totals use medians; founder fit is a flagged neutral 5.
 
@@ -116,5 +119,30 @@ Pattern across rounds 0–2: consumers in this space pay for **storage/backup, a
 | Apple Legacy Contact adoption | No primary exists; 12% all-platform account-level controls (Trust & Will 2026) | High |
 | Photo Managers platform/billing split | Unpublished | High |
 
+## Round 3 evidence summary (artifact and moment variants)
+
+Top total after round 3: **47 (v1-organizer, unchanged)**. Rounds without improvement: **2**. Stop condition (a) is still not met: it also requires no dimension below 6, and the leader has Ceiling 2.
+
+| Variant | Its own honest ceiling | The fact that capped it | Pointer |
+|---|---|---|---|
+| v3-gift (43) | $2–24M, central ~$9M | Both wedges already ship at the category leader: Storyworth runs an automated phone interviewer with follow-ups (works on a landline) and uses photos as prompts; Remento anchored recordings to single photos on 2026-10-22; Memory Murals tags people and dates from speech at $99.99/yr. Largest sourced revenue in the category is Remento's ">$7 million in sales" (unaudited, aired 2026-03-25). Completion is the constraint: ~10 stories per Remento family against 52 prompts. Eight failures or exits in the category | critiques/v3-gift-r3-*.md; research/memoir-gift-market.md bottom line, Q2–Q4 |
+| v3-journal (41) | $4–16M | Famileo already sells this in the US at $9.99–13.99 with ~110 US iOS ratings against 5,322 in France; the whole US category is ~7,500 families. At public print and First-Class postage prices the unit cost is $9.24–10.09 against a $9.99 price. Frames at $59–149 with no subscription do the same job. Scaled journals are deliberately manual, so auto-selection solves a problem operators do not report | critiques/v3-journal-r3-*.md; research/family-artifact-market.md Q2–Q5 |
+| v3-care (41) | $3–36M, plan on $2–5M in year five | The current market price for the deliverable is below the variant's unit cost: LifeBio lists $149/month for a census of 100–199 (~$9–18 per person per year); LifeLoop (4,700+ communities) ships a Life Story feature with an AI layer generally available since 2026-11-17. No institutional life-story vendor has reached $10M | critiques/v3-care-r3-*.md; research/institutional-legacy.md bottom line, Q2–Q3 |
+
+What did improve: all three scored Buildability 6 with no Apple or Google dependency, and the journal scored Wedge 6.
+
+## Where nine-figure revenue exists near this idea (evidence from rounds 0–3)
+
+| Who | What they sell | Evidence | Why a seed-stage software company cannot simply copy it |
+|---|---|---|---|
+| Apple, Google | Storage with free AI search | Google One 150M+ subscribers (2025-05) | Platform owner; prices 2 TB below raw object-storage cost |
+| Skylight, Aura, Nixplay | Wi-Fi frames (hardware, bought once as a gift) | Skylight claims $300M+ to $500M+ (unaudited); Nixplay filed $57.9M FY2021, $20.0M FY2023; Aura "single-digit millions" of frames | Hardware margin and inventory; payers reject a recurring fee (Nixplay ~1.2% paid) |
+| Ancestry | Records and DNA subscriptions | 3.0–3.8M subscribers | Owns the records; closed API |
+| Shutterfly, CEWE | Printed photo products | CEWE €864.5M (2025) | Print logistics at 11.6% EBIT; built their own AI |
+| MIXI FamilyAlbum | Free storage plus prints, premium, ads | ¥17.2B segment | Subsidized by a listed parent at ~5% margin |
+| CompanyCam | Job-site photo documentation for contractors | 170,000+ customers; $415M raised | A vertical with a business payer; already ships MCP |
+
+Fifteen variants in, every consumer family-memory software variant caps at roughly $5–45M on evidence.
+
 ## Weakest dimension (drives next round)
-**Ceiling (2 on the leader; 2–3 on every variant in rounds 1–2).** Round 3 changes what is sold, not who organizes: variants must monetize an **artifact or a moment** that people demonstrably pay for at scale (gifts to aging parents, printed family journals, institutional legacy programs), keep the family archive as the retention asset behind it, and bring sourced revenue for the comparables (Storyworth, Remento, Aura, Skylight, Famileo, Neveo, LifeBio, Storii), none of which rounds 0–2 researched.
+**Ceiling (2 on the leader and on all three round-3 variants).** Round 4 leaves the consumer family-memory subscription entirely and probes three places where large money is evidenced and the buyer is not a family paying for memories: (1) AI model builders paying for consented, rights-cleared camera-roll data; (2) the hardware gift frame itself, with the elder interview built in; (3) the insurance contents claim, where a household's pooled camera rolls are evidence worth tens of thousands of dollars.

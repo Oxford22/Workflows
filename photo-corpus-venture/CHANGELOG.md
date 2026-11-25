@@ -104,3 +104,32 @@ The pattern across three rounds: every variant that charges for organizing, nami
 - Usage credits ran out mid-round on 2026-11-03; the round resumed on 2026-11-24 after a model change. The three-week gap means price and product facts dated 2026-11-03 should be re-checked before the pitch is used.
 - The direct page-fetch tool was withdrawn from this session; research agents now use web search plus curl through the proxy. Sites that block non-browser clients stay [unknown].
 - To limit spend, rounds from here run three variants (the minimum), three narrow research tracks, and nine critics.
+
+## Round 3 — 2026-11-24 to 2026-11-25 — Sell the artifact or the moment
+
+### What happened
+- Three research tracks on comparables no earlier round covered, each audited and repaired: `research/{memoir-gift-market,family-artifact-market,institutional-legacy}.md`. Raw audit findings are kept in `research/audits/`.
+- Three variants that monetize an artifact or a moment and keep the archive behind it: `v3-gift` (an adult child gifts a parent a year of AI-led interviews about the family's photos, with a book), `v3-journal` (a printed monthly family journal assembled from every relative's phone), `v3-care` (a legacy program that senior-living operators and hospices pay for per resident).
+- Nine fresh-context critics. Median totals: gift 43, journal 41, care 41. **No variant beat `v1-organizer` at 47.** Rounds without improvement: 2.
+- The container restarted mid-round and stopped the workflow. Research, audits and variants had been written to disk and were committed; two research repairs and all nine critics were re-run.
+
+### What we learned
+1. **The gifted memoir is a real purchase and a small category.** Storyworth advertises 1,000,000+ books since 2013 with a 13-person team; its revenue is undisclosed. The largest sourced figure in the category is Remento's ">$7 million in sales" (founder statement, aired 2026-03-25, unaudited). The failure list is long: Artifact, HereAfter AI, StoryFile, StoryTerrace, LifeBook, No Story Lost, Eternos, Autobiographer.
+2. **Both of the gift variant's wedges already ship.** Storyworth's "Magic Interviews" phones the elder and asks follow-ups, on a landline if needed, and uses photos as prompts. Remento launched a photo-anchored product on 2026-10-22. Memory Murals tags people and dates from speech for $99.99 a year.
+3. **Voice AI is cheap; elders finishing is the problem.** A year of AI interviews costs about $6–22 per recipient. Remento families record about 10 stories against 52 prompts. The only study of AI voice conversations over personal photos had 13 participants with a mean age of 65.8.
+4. **Frames are the nine-figure business in "family photos for grandparents", and they are hardware.** Skylight claims $300M+ and, more recently, over $500M a year (both unaudited) across 12M customers. Nixplay filed $57.9M for FY2021 and $20.0M for FY2023. Aura has sold "single-digit millions" of frames, is profitable, and charges no subscription. Payers reject recurring fees on the artifact: Nixplay reached about 1.2% paid and drew a bait-and-switch lawsuit when it forced the issue.
+5. **Printed family journals work in France and nowhere else.** Famileo: €15.3M in 2025 after ten years, ~280,000 families. Its US iOS app has ~110 ratings against 5,322 in France; the whole US category is about 7,500 families. At public US print and First-Class postage prices a journal costs $9.24–10.09 to make and mail against a $9.99 price.
+6. **Institutions pay little for life stories.** LifeBio, about 25 years old, reports over $2M revenue with 48 employees and NIH grant support; its current list price works out to ~$9–18 per person per year. LifeLoop, in 4,700+ communities, ships a Life Story feature whose AI layer went generally available on 2026-11-17.
+7. **A direct statement from an operator:** Aura's CTO, 2025-10-21: companies that tried "the private photo network on its own" were "not being able to find a business model for it". Lalo shut in July 2023 because "no one wanted to pay for this".
+8. **What got better:** all three variants scored Buildability 6 because nothing in them waits on Apple or Google, and names come from a prompted human, which removes the face-template problem.
+
+### Decision
+`variants/current.md` keeps the organizer workbench as base, with round-3 merge notes appended. All three round-3 variants go to GRAVEYARD with salvage notes.
+
+After fifteen scored variants the result is consistent: consumer family-memory software caps at roughly $5–45M on evidence. Nine-figure revenue near this idea exists only for platform owners (storage), hardware (frames), record owners (Ancestry), print logistics, a subsidized parent (MIXI), and one business vertical (CompanyCam).
+
+Round 4 therefore leaves the family-pays-for-memories model and probes three places where large money is evidenced: AI model builders paying for consented camera-roll data; the gift frame itself, with the elder interview built in; and the insurance contents claim, where pooled household camera rolls are evidence.
+
+### Walls hit
+- Container restart on 2026-11-25 cost one workflow run. From here every completed step is committed and pushed before the next begins.
+- sec.gov, Similarweb, several French registries and print-quote calculators block automated clients; those facts are tagged secondary or [unknown] in the files.

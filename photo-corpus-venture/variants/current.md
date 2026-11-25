@@ -1,4 +1,4 @@
-# current.md — the surviving variant after Round 2 (unchanged base from Round 1)
+# current.md — the surviving variant after Round 3 (unchanged base from Round 1)
 
 **Status (2026-11-24, end of round 2): no round-2 variant beat this one (prints 45, genealogy 45, grandparent 41, SDK 35). Round-2 merge notes are appended at the end.** Earlier status (2026-11-03, end of round 1): base = `v1-organizer` (47/100, winner on median total; tie with v1-trades broken on mean critic total 47.3 vs 46.7 and on structural lows). Weakest dimension: **Ceiling 2**. This file is the organizer variant verbatim, plus a section at the end recording what was carried in from the round-1 losers and what Round 2 must change.
 
@@ -189,3 +189,16 @@ No round-2 variant replaced this base. What round 2 changes in it:
 - **Prints are an ingest path, not a business.** Front-and-back capture matters (handwritten backs); mail-in vendors scan fronts only; Ancestry prices the scan as a loss leader. [research/digitization-market.md Q3, Q5]
 - **Genealogy import:** GEDCOM gives the people graph; deceased relatives are the consent-safe auto-name set. No write-back to Ancestry (no public API); FamilySearch write-back is partner-gated. [research/genealogy-market.md Q4]
 - **What people pay for:** storage/backup, artifacts and services at moments. Not organizing. Round 3 tests variants that sell an artifact or a moment and keep this workbench and archive behind it.
+
+
+---
+
+## Round-3 merge notes (2026-11-25)
+
+No round-3 variant replaced this base (gift 43, journal 41, care 41). What round 3 adds to it:
+
+- **Spoken names beat face templates.** When a prompted person says who is in a photo, no biometric processing is needed to name anyone. The client-review step should accept voice answers from relatives, by link or phone. [research/memoir-gift-market.md Q4; research/face-regulation.md Q7]
+- **Voice is cheap; completion is not.** An AI voice interviewer costs roughly $6–22 per person per year on mid-priced stacks. The category's one completion figure is ~10 stories per family against 52 prompts. Keep interviews short, photo-led and tied to a deliverable the organizer is already producing. [research/memoir-gift-market.md Q2, Q5]
+- **Do not sell a recurring fee on the artifact.** Frame buyers reject subscriptions (Nixplay ~1.2% paid). Price the vault as an optional annual keep-alive, not as the product. [research/family-artifact-market.md Q1]
+- **Institutional buyers pay little for life stories.** Current list prices run ~$9–18 per person per year. Senior living is a referral source for organizers, not a software market. [research/institutional-legacy.md Q3]
+- **A software-only private family photo network has not found a business model.** Aura's CTO says so on the record; Lalo shut in 2023 because "no one wanted to pay for this". [research/family-artifact-market.md Q1, Q2]
