@@ -1,0 +1,148 @@
+{
+ "file_audited": "research/contents-claims.md",
+ "audit_date": "2026-11-25",
+ "method_note": "Fresh-context hostile audit. Read the file and README tagging rules in full. Re-fetched 34 cited pages with curl (browser UA) and read them as text or via pdftotext; 6 Reddit threads re-checked through the arctic-shift archive API; 8 web searches for facts the file marked [unknown] or sourced only from search excerpts. All arithmetic in the estimates was recomputed. The research file was not edited.",
+ "untagged_numbers": [
+  "L9 (Bottom line 3): \"at a $300 fee and full capture that is about $18M a year\" - the $300 fee has no tag and no basis anywhere in the file; the numbers table tags the product [estimated] but never justifies $300.",
+  "L11 (Bottom line 5): \"third-party estimates of roughly $41M to $56M for Enservio after 20-plus years and 250-plus carrier customers\" - no tag on the line; the 250-plus figure is a 2016 number.",
+  "L11 (Bottom line 5): \"fee caps of 10% in Texas and in Florida emergencies\" - no tag on the line (tagged only later in 2.3).",
+  "L40: \"Threshold: contents loss of $25,000 or more (below that, a list is an evening's work)\" - untagged assumption.",
+  "L40: \"plus 5,000 to 16,000 catastrophe total-loss households in a normal-to-peak wildfire year\" - the 5,000 'normal year' figure has no source or method.",
+  "L40: \"Hard upper bound about 130,000 to 150,000 (every fire claim plus a peak catastrophe year)\" - untagged.",
+  "L48: \"State Farm HomeIndex launched 2012\" - no tag, no source.",
+  "L53: \"three founders\" and L29 '\"two weeks\" with Bevel' - parenthetical attribution only, no tag.",
+  "L54: \"A dozen-plus entrants, all priced under $60 a year\" - untagged summary; AI-Temize in the same bullet is priced per image batch, not per year.",
+  "L81: \"Carriers pay per seat or per job, in tens to low thousands of dollars: $36 to $45 a job (ContentsTrack), $950 to $1,900 a seat-year (XactContents)\" - no tag on the line.",
+  "L83: \"at 10% contingency\" - untagged assumption; \"the buyer count is small (1,697 Texas licences)\" repeats a secondary figure without tag.",
+  "L89: \"30% to 60% (California, 2026), 65% (Colorado, 2022), 70% (Oregon, 2023)\" and \"the top 30% to 40% of limits\" - no tags on the line; the second is an unstated derivation.",
+  "L90: \"Served by: carrier specialists (18%), public adjusters (16%), attorneys (16%), contents specialists (8%), Bevel (25%-plus)\" - no tags; mixes survey shares of respondents with a company claim about all survivors.",
+  "L91: \"up to 40% of a contents limit is at stake in California, often six figures\" and \"features Bevel could add in weeks\" - untagged.",
+  "L98: \"revenue est. $41M-$56M, outlier $96M [third-party estimators, low quality]\" and L100 \"Revenue est. $9.9M [Latka, low quality, single source]\" and \"~$2M grants [secondary]\" - tags are not one of the four permitted forms and carry no URL or date.",
+  "L99 and L103 (Comparables): \"$36-$45 a job; $950-$1,900 a seat-year\" untagged; \"10%-20% of recovery, capped [sourced]\" has a bare tag with no URL.",
+  "L151-156 (Payers table): \"10%-20% contingency\", \"$0-$60 a year\", \"$36-$45 a job; $950-$1,900 a seat\", \"$285+ a month\", \"$6M\" - the whole 'Observed price' column is untagged.",
+  "L158 (largest-revenue statement): \"$40.98M (Dun & Bradstreet), $46M (Growjo) and $55.9M (ZoomInfo, Datanyze, RocketReach), with one outlier of about $96M (SignalHire)\" - no tag, no URL, no access date."
+ ],
+ "suspect_claims": [
+  {
+   "claim": "L74: Florida public adjuster definition quoted, then \"A done-for-you paid inventory in Florida fits that wording.\" Also Bottom line 5.",
+   "problem": "Contradicted by the same subsection. F.S. 626.854(1), fetched from the cited leg.state.fl.us page, ends: \"The term does not include a person who photographs or inventories damaged personal property or business personal property ... if such person does not otherwise solicit, adjust, investigate, or negotiate for or attempt to effect the settlement of a claim.\" The file quotes the first half of the definition and omits this express carve-out for inventory work. The 'sharp edge' conclusion for Q6 is wrong as stated; Florida is closer to a safe harbour for inventory-only services.",
+   "severity": "major"
+  },
+  {
+   "claim": "L89: \"Legislative trend. 30% to 60% (California, 2026)\" and Bottom line 4 \"The law is shrinking the job: California now requires 60% of contents limits\".",
+   "problem": "Misleading comparison of two different bases. The pre-2026 rule (CDI Notice 2025-02-06, verified) was \"30 percent of the policy limit applicable to the covered dwelling structure, up to ... $250,000\"; SB 495 made it 60% of the personal-property limit up to $350,000 (verified). With contents at the default 50% of dwelling, which the file itself cites at L21, 30% of dwelling already equals 60% of contents. The real change for a default policy is the cap ($250,000 to $350,000), not a doubling. L23 states both bases correctly, but 2.8 and the bottom line present it as a step from 30% to 60%, overstating the legislative shrinkage that Q8 rests on.",
+   "severity": "major"
+  },
+  {
+   "claim": "L9 and L134: \"at a $300 fee and full capture that is about $18M a year\"; \"$2.25M\" at 50% usable photos x 25% paying.",
+   "problem": "The headline market size is an artefact of an unsupported price. $300 is not sourced or argued, and it is below the file's own evidence of what people pay: contents specialists \"$800 to $8,000 flat\" (L45) and public adjusters at 10% of recovery (L44, L68). At $2,000 a household the same 60,000 gives $120M. The 50% and 25% conversion rates are also pure assumptions. Arithmetic is correct; the inputs are not evidence.",
+   "severity": "major"
+  },
+  {
+   "claim": "L40: \"Estimate 40,000 to 80,000, central 60,000\" and \"Hard upper bound about 130,000 to 150,000\".",
+   "problem": "The 25% to 50% share of fire claims above $25,000 of contents is admitted to be an assumption with no anchor. The 'hard upper bound' is not hard: it excludes 875,000 water claims and 1.8 million wind and hail claims a year (the file's own estimates), renters and condo policies, Texas, and all NFIP flood contents claims, any of which can exceed $25,000 of contents. The Triple-I page the file cites also publishes a non-catastrophe fire table (frequency 0.14 per 100, severity $130,752, 2020-2024) that would have sized the single-house-fire segment the file says the residual job concentrates in; it was not used.",
+   "severity": "major"
+  },
+  {
+   "claim": "L11, L98, L158: Enservio revenue \"roughly $41M to $56M\"; \"$40.98M (Dun & Bradstreet), $46M (Growjo) and $55.9M (ZoomInfo, Datanyze, RocketReach) ... about $96M (SignalHire)\"; Encircle \"Revenue est. $9.9M [Latka]\".",
+   "problem": "Estimator-only revenue figures, read from search excerpts, not from the pages (source 44 says so). They are modelled numbers, suspiciously precise ($40.98M), span more than 2x, and the identical $55.9M on three sites indicates copying, not three observations. They appear untagged in the bottom line. One search for a primary figure (Solera filings, deal press) found none; the honest value is [unknown], which the file says at L158 but undercuts by printing the range in the bottom line next to a 2016 customer count.",
+   "severity": "major"
+  },
+  {
+   "claim": "L81: \"Carriers pay per seat or per job, in tens to low thousands of dollars: $36 to $45 a job (ContentsTrack)\"; Payers table row 'Carrier ... $36-$45 a job'.",
+   "problem": "Wrong buyer. The Verisk page (verified: $45 plus $300 setup; $600 for 15; $1,800 for 50) describes ContentsTrack as \"The perfect tool for the pack-out professional\" for \"Restoration contractors and adjusters\"; it is pack-out tracking sold to contractors, not what a carrier pays for contents valuation. The XactContents seat price comes from an unfetched search excerpt. Q7 (what carriers pay per claim) therefore has no valid evidence behind the stated answer.",
+   "severity": "major"
+  },
+  {
+   "claim": "L77: \"38% of US consumers in an Accenture survey admitted overstating a home claim\" [sourced-secondary: search excerpts of claimsjournal.com 2016 and trade pieces].",
+   "problem": "Not in the cited source. The claimsjournal article at the listed URL (2016-05-04, 'Tips on Investigating Contents Claims Fraud', fetched via the amp host) does not mention Accenture; its only percentage is an NICB 27% rise in referrals. Accenture's published figures found by search are about 25% (2003) and 12% (2010) who call overstating a claim acceptable, not 38% who admit doing it on a home claim. Treat the 38% as unverified and possibly garbled; remove or re-source.",
+   "severity": "major"
+  },
+  {
+   "claim": "L28 and Funnel L143: \"62% of total-loss survivors got some or all contents benefits without an itemized inventory; 75% got 65% or more; 27% got 100%\"; \"73% did not get 100%\".",
+   "problem": "The numbers are in the UP narrative report as quoted, but 75% cannot share a base with 62% (three-quarters cannot have received 65% or more without a list if only 62% received anything without one); the 75% is a sub-bullet and is evidently a share of the 62%. The file presents it without that base. The companion summary-data export the file also cites gives different values for the same questions: 56.37% must list every item (file: 53%), 32.78% grouped (40%), 28.30% when or where (24%), 15.57% specialist sent (18%), 12.50% cash-out (16%), 11.79% deadline (14%), on n=424, and Q22 shows only 42.34% of all 555 respondents paid without an inventory. The file does not note the disagreement between its two sources.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L8 and L130: Bevel \"says more than 25% of Palisades and Eaton survivors used it\" [sourced: bevelmade.com, 2026; sourced-secondary: devcuration.com]; L90 \"Bevel (25%-plus)\".",
+   "problem": "The 25% is not on any Bevel page fetched (home, FAQ, about). It exists only as a relayed company claim in devcuration.com, a templated funding-digest site, with the primary (The Insurer) paywalled. Denominator is undefined, hence the file's own 4,000 to 10,000 spread. The bottom-line tag implies a primary source for it. An unaudited company claim carries the 'already served for free' conclusion.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L47 and L158: FT Partners profile lists Enservio revenue \"na\"; \"more than $10 billion in contents claims history\".",
+   "problem": "Misread and misquote. In the PDF the 'Revenue: na / EBITDA: na' lines sit in the Vista Equity Partners 'Investment Criteria' box (Vista's deal preferences), not in Enservio's Key Stats, which simply give no revenue. The quoted phrase does not appear; the document says \"proprietary database of more than $10 billion in property contents information\" and \"Replacement Cost Contents Data: $10bn\". Conclusion (no disclosed revenue) is unaffected.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L11: \"Charging a percentage of recovery makes the seller a public adjuster in most states\".",
+   "problem": "'Most states' rests on three statutes read (FL, CA, TX) and an unfetched search excerpt of NAIC Model 228. No state count, no survey of definitions. The California and Texas definitions quoted turn on negotiating or effecting settlement, not on how the fee is computed.",
+   "severity": "minor"
+  },
+  {
+   "claim": "Stale inputs used in present tense: Enservio 250+ carriers and 400+ staff (2016); NAIC inventory survey (2012); NAPIA about 600 members ('older presentation'); contents-specialist price page 'about six years old'; Hosta funding (2021); State Farm HomeIndex (2012); Colorado statute read from a mirror of the 2024 text.",
+   "problem": "Each is 3 to 14 years old. A 2017 NAIC survey (44% have an inventory) surfaced in one search and supersedes the 2012 figure. The Colorado public.law page states it reflects the 2024 text accessed 2025-05-26, which contradicts L170 'public.law mirrors dated 2026-11-16'; later Colorado amendments were not checked.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L44 and L167: AB 597 \"final status [unknown]\".",
+   "problem": "Answered [unknown] without adequate effort. One search returned Legiscan and CalMatters records showing the bill held under submission in Senate Appropriations on 2025-08-29 with no later action, so it did not become law.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L53: \"United Policyholders recommended it at a workshop\" [sourced: uphelp.org/theres-help-for-dealing-with-insurance/].",
+   "problem": "Overstated. The page is a reposted local news story reporting that \"Several suggestions were made including using Bevel Made\" at a meeting; it is not a United Policyholders recommendation.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L49 and L88: 47% of homeowners say they prepared an inventory, yet \"Consumers do not prepare\".",
+   "problem": "The falsification leans on App Store rating counts to dismiss a sourced 47% (and a 44% NAIC 2017 figure). Rating counts are a weak proxy for usage and say nothing about spreadsheets, videos or paper lists. No evidence on how many loss victims had a usable pre-loss inventory.",
+   "severity": "minor"
+  },
+  {
+   "claim": "Many [sourced-secondary] tags name no URL: NAPIA members (L44), NAIC working-group 10%/15% caps (L44), specialist prices $800 to $8,000 (L45), CAL FIRE per-fire counts 6,837 and 9,418 (L37), Encircle funding $1.6M to $2.1M (L47), 59% NAIC (L49), XactContents $1,900/$950 (L47).",
+   "problem": "README requires a URL and date per number. These are search-engine excerpts of unfetched pages and cannot be re-verified from the file. Hosta ($11.5M, November 2021) and DocuSketch (2024-01-16) were confirmed by search to primary press releases the file could have cited directly.",
+   "severity": "minor"
+  }
+ ],
+ "sources_checked": 34,
+ "top5_load_bearing_checks": [
+  "Cal. Ins. Code 10103.7 (california.public.law): SUPPORTED. \"no less than 60 percent of the policy limit applicable to the personal property covered under the policy, up to a maximum of three hundred fifty thousand dollars ($350,000), without requiring the insured to file an itemized claim\"; attestation form, fraud carve-out and 2026-07-01 policy-form date all present. Applies to a 'primary dwelling', which the file omits.",
+  "Triple-I facts page: SUPPORTED. Table 'Average Homeowners Losses, 2020-2024': property damage 5.48 / $18,327; fire and lightning 0.21 / 101,092; water 1.42 / 17,240; wind and hail 2.97 / 15,708; theft 0.11 / 6,184; \"In 2024, 5.1 percent of insured homes had a claim\"; 47 percent inventory figure present.",
+  "United Policyholders LA 12-month report: SUPPORTED AS QUOTED, with caveats. 675 households, fielded January 6 to February 17 2026; 62% / 75% / 27%; 53% / 40% / 24% / 23% / 18% / 16% / 14% all present. Base of the 75% is ambiguous and the raw data export disagrees by 3 to 7 points (see suspect claims). Q30 hiring shares (15.93% / 16.11% / 7.78% / 43.70%, n=540) match exactly.",
+  "CDI insured-losses PDF, July 2026: SUPPORTED. Residential claims 15,890 + 22,847 = 38,737; with payment 37,957; paid $23,409,782,495.",
+  "Verisk ContentsTrack pricing: NUMBERS SUPPORTED, FRAMING WRONG. \"$45 ... Does not include initial set up fee of $300 USD\"; \"$600 15 Jobs\"; \"$1,800 50 Jobs ... fee per job is $36\". Product is for pack-out contractors, not a carrier contents-valuation price.",
+  "FT Partners Enservio profile: PARTLY MISQUOTED. 250+ carriers, 400+ employees, founded 2004 present; 'revenue na' belongs to the Vista Equity box; '$10 billion in contents claims history' is not the document's wording. The same PDF states \"U.S. Insurers spend ~$10 - $15bn annually in Contents Claims Reimbursement\", which the file never uses.",
+  "Florida 626.854: QUOTE ACCURATE, MATERIAL OMISSION (inventory exclusion). Fee caps 10% / 20% / 1% / 0% confirmed.",
+  "Also confirmed: CRS 10-4-110.8 (30%, 65%, 365 days); Oregon Laws 2023 ch. 85 (70%); Tex. Ins. Code 4102.104 (10%, 72 hours); Cal. Ins. Code 2051.5 (36 months, 100 days), 2061, 15027(b)(7); CDI Notice (30% of dwelling, $250,000); CDI insurer-response list (my independent tally also gives 26 and 15); NFPA (329,500; $11.4B; 253,500); Treasury FIO (49.3 million; 80 percent; 5.8%; $18,206); FLOIR Milton 304,408 and Helene 72,037; UCLA (more than 16,000 structures); UP 6-month (453 households, 10%); UP surveys page (39%, 15%, 11%, 14%); UP tips quotes; Encircle $285/mo; devcuration ($6M, investors, 25% as company claim); claimos (1,697; 77%); iTunes lookup for id 330304485 returns zero results; knowyourstuff.org serves gambling spam; all six Reddit threads re-checked exist with the stated dates and scores. All arithmetic recomputed and correct."
+ ],
+ "sources_broken_or_misquoted": [
+  "Florida F.S. 626.854(1) (source 10): definition quoted selectively; the sentence excluding \"a person who photographs or inventories damaged personal property\" is omitted and the conclusion drawn is the opposite of what the text supports.",
+  "FT Partners Enservio profile (source 24): 'revenue \"na\"' is Vista Equity's investment-criteria field, not Enservio's revenue; '\"more than $10 billion in contents claims history\"' is not a verbatim quote (document: \"more than $10 billion in property contents information\").",
+  "claimsjournal.com 2016-05-04 (source 42): cited for an Accenture 38% figure the article does not contain.",
+  "Verisk ContentsTrack (source 26): prices correct, but presented as what carriers pay; the page sells to pack-out and restoration contractors.",
+  "United Policyholders 12-month report and its summary-data export (source 15): cited together as one source although their percentages for the inventory-process questions differ; 75% reported without its base.",
+  "bevelmade.com (source 22): cited in the bottom line for the 25% survivor share, which appears on none of the three Bevel pages listed.",
+  "uphelp.org/theres-help-for-dealing-with-insurance/ (source 21): a reposted news story, described as a United Policyholders recommendation.",
+  "colorado.public.law (source 7): page is the 2024 text accessed 2025-05-26, not a mirror 'dated 2026-11-16' as section 5 says."
+ ],
+ "missing_vs_brief": [
+  "Q1: contents as a share of dwelling coverage rests on unfetched search excerpts only; no policy form, carrier filing or NAIC/Triple-I page read.",
+  "Q1: how insurers pay with and without an inventory is described only through California and survey data; no account of standard carrier practice (ACV first, receipts for holdback, depreciation schedules) from a carrier or regulator source.",
+  "Q1: Texas, Florida and Washington marked 'no statute found' [unknown] with no record of what was searched. A March 2024 Washington commissioner letter asking insurers to offer at least 70% without inventory, and California SB 897 (80% proposal), surfaced in one search and are absent.",
+  "Q1: United Policyholders data on how much policyholders recover overall (underinsurance amounts, share of limits paid) not reported, although the surveys page read contains such figures; time to complete an inventory left [unknown] with anecdotes only.",
+  "Q2: NAIC and Verisk were not used directly; renters claims by peril [unknown]; no flood contents data (NFIP contents claims) although the brief names flood.",
+  "Q2: number of total-loss homes per year left [unknown] with no attempt to assemble it from wildfire structure-loss series (CAL FIRE, NIFC) or hurricane destroyed-home counts; hurricane section gives claim counts only, nothing on Ian, and no structure counts.",
+  "Q2: average contents claim left [unknown] although the cited FT Partners PDF gives US contents reimbursement of about $10bn to $15bn a year, and Triple-I's non-catastrophe fire table (0.14 per 100; $130,752) on the cited page was not used.",
+  "Q3: public-adjuster fee caps 'by state' covers only Texas, Florida and California; no state table, no disaster-specific caps elsewhere; national count of licensed public adjusters [unknown]; NAPIA figure undated and unsourced.",
+  "Q3: independent contents-inventory specialists and pack-out firms: no named firm, no fetched price page; one stale search excerpt and one Reddit invoice.",
+  "Q3: carrier-side vendors: no per-claim or per-seat price for Enservio, Hosta, DocuSketch or Cotality; no revenue for any; Verisk segment data not attempted; Encircle customer count missing.",
+  "Q3: policyholder apps: no pricing for HomeZada or Sortly, no usage beyond rating counts, State Farm/USAA/Lemonade/Allstate status [unknown] or inferred from one App Store lookup; no check of Google Play.",
+  "Q4: launch dates, funding and traction missing for every entrant except Bevel. At least one further post-loss tool was missed: Loti (loti.com/disaster-inventory), a public-adjuster firm offering a free 'AI Home Inventory' built \"from your photos\"; hackathon projects (Ashline, ClaimReady, ClaimSight) also surfaced in one search. Insurer features dismissed after 'one extended search'.",
+  "Q5: no state insurance department guidance cited; nothing specific to Google Photos or iCloud; only one news quote. Reddit: r/LosAngeles and r/wildfire yielded no posts (cached queries show timeouts and empty results), so two of the four named subreddits are effectively unanswered; 'what posters paid' has two data points.",
+  "Q6: NAIC model act language taken from a search excerpt only; unauthorized practice of law not addressed; no regulator bulletin, enforcement action or licensing-exemption research beyond three statutes, one of which was misread; insurer acceptance of old-photo inventories supported by one Reddit anecdote.",
+  "Q7: what carriers pay per claim [unknown]; the carrier-incentive question is argued from marketing copy; plaintiff-side attorneys get one clause and no evidence on fees, tools or buying behaviour.",
+  "Q8: no named history for Allstate Digital Locker or Know Your Stuff (launch, peak users, shutdown date or reason) beyond their current absence; 'market tiny' rests on the unsupported $300 price."
+ ],
+ "verdict": "needs_fix",
+ "verdict_reason": "The primary-source spine is sound: every statute, the Triple-I, Treasury, NFPA, CDI and United Policyholders figures, and all arithmetic were re-verified, and no number was shown to be invented by the author. But seven findings are major: the Florida licensing conclusion omits an express inventory exclusion in the statute quoted; the California '30% to 60%' trend compares different bases; the $18M market figure hangs on an unsupported $300 price below the file's own price evidence; the 40,000 to 80,000 funnel number and its 'hard upper bound' are assumption-driven and exclude water, wind, flood and renters; Enservio revenue appears in the bottom line from estimator sites via search excerpts; a contractor pack-out price is presented as what carriers pay; and an Accenture 38% figure is not in its cited source. Eighteen lines carry untagged or wrongly tagged numbers and sixteen brief items are unanswered or [unknown] without evidence of effort. Fixable without a rewrite."
+}

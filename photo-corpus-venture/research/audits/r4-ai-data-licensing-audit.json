@@ -1,0 +1,132 @@
+{
+ "file_audited": "research/ai-data-licensing.md",
+ "audit_date": "2026-11-25",
+ "method_note": "26 cited sources re-fetched or cross-checked. sec.gov returned HTTP 403 ('Undeclared Automated Tool') to every direct request from this environment, so the five SEC URLs were checked through the Shutterstock Q3 2026 earnings-release mirror (finviz), Octus' case summary, two filing trackers (talika.ai, dataconto.com) and WebSearch summaries of the filings. No fabricated number was found among the claims that could be checked; one load-bearing source (Getty lender deck) could not be verified at all.",
+ "untagged_numbers": [
+  "L9: \"Still-image licensing peaked in 2025.\" -- no tag; a dated quantitative conclusion stated as fact in the bottom line.",
+  "L28: \"Q1 DDS was $21.0M (down 47%) and Q2 $56.1M (down 16%) [sourced-secondary: search summary of Shutterstock's Q1 and Q2 2026 releases ...]\" -- tag resolves to no URL (figures are consistent with the Q3 release: 21.0 + 56.1 + 15.8 = 92.9).",
+  "L31: \"Photobucket's own filing calls the licensing 'plans,' 'wishes' and 'hopes' [sourced-secondary: motion to dismiss dated 2025-11-07, via search summary]\" -- dated quote, no URL.",
+  "L33: \"One forum report of about $400 for 10,000 photos implies $0.04 per image per year [sourced-secondary: search summary; estimated: 400 / 10,000]\" -- forum unnamed, no URL; cannot be reproduced.",
+  "L36: \"Troveo range $0.75 to $3 per minute [sourced-secondary: AOL/NY Post 2025 via search summary]\" -- no URL.",
+  "L50: \"It claims 'tens of millions in revenue for its data partners' and 300,000+ hours of video [sourced-secondary: company release via search summary]\" -- no URL.",
+  "L51: \"prior funding about $3.56M [sourced-secondary: Tracxn figure via search summary]\" -- no URL.",
+  "L55: \"Luel (YC): ... about $0.50 per approved minute on one review site [sourced-secondary: search summary; low quality]\" and \"Mercor: ... '$2 million daily to over 30,000 weekly active contractors' in May 2026 [sourced-secondary: aggregator via search summary; low quality]\" -- neither tag has a URL or names the site.",
+  "L62: \"median listed $10 an hour, middle half $7 to $15 [sourced-secondary: job-board benchmark via search summary; low quality]\" and \"$6 to $18 per task at Memories.AI [sourced-secondary: search summary]\" -- no URL, job board unnamed.",
+  "L68: \"Amazon and Microsoft won in 2022 on extraterritoriality ... [2022 rulings via search summary]\" -- no URL for the 2022 rulings.",
+  "L70: \"amended-rule compliance date 2026-04-22 [sourced-secondary: search summary]\" -- no URL (the Federal Register was not fetched, per the file's own unknowns list).",
+  "L89: \"Share licensable | 15% | 12.7% | 50%\" -- low and high are described only as \"assumed brackets\"; README requires an [estimated] method reproducible from stated inputs. Both feed the $4.80 and $62.80 per-roll figures.",
+  "L113: \"Supported: survivors stay under $10M\" -- no tag; the threshold rests on one company (Reklaim, C$4.99M). Same row repeats \"Vana token down 96%\" without a tag.",
+  "L143: marketplaces table, Human Native buyers \"UK video AI firm and others\" -- appears nowhere else in the file, no tag, no source.",
+  "L139-147: marketplaces table cells carry no tags at all (\"About $0.007 per photo; $25 cash-out\", \"About $26M\", \"About $3.56M\", \"1.0M to 1.3M users (claims)\", \"Token down 96%\", \"C$4.99M revenue\"); they repeat values tagged earlier, several of which are the URL-less tags listed above."
+ ],
+ "suspect_claims": [
+  {
+   "claim": "L37: \"Deals sourced from private individuals' personal media. Three were found.\" and L11: \"the one platform that tried to license a consumer photo archive (Photobucket)\"",
+   "problem": "Contradicted by an omission. GoPro launched an opt-in AI Training program on 2025-07-30: US subscribers license their cloud-stored personal footage for third-party model training and receive 50% of the licence revenue; 125,000+ hours opted in within about two weeks, 300,000+ hours by 2025-12-11, and GoPro's 10-Q filed 2026-08-10 describes the program (gopro.com/en/us/info/ai-training-program; nasdaq.com press releases of 2025-07-30 and 2025-12; dataconto.com/open-data/sec-filings). This is the closest public precedent to the variant (personal archive plus revenue share, listed company with filings) and the file does not mention GoPro once. Whether GoPro has booked any revenue from it was not found in one search, so the file's 'no revenue disclosed' statement may still hold, but it was reached without looking at the obvious case.",
+   "severity": "major"
+  },
+  {
+   "claim": "L32: Freepik at 2 to 4 cents \"is the only closed per-image bulk price found\"; L33: \"Adobe's 2024 per-minute video purchases: [unknown] (the Bloomberg report could not be retrieved)\"; L91: base price per item $0.03",
+   "problem": "One WebSearch returns the Bloomberg 2024-04-10 report through TechCrunch, PetaPixel, The Register and PYMNTS: Adobe paid about $2.62 per minute on average and up to $7.25 per minute for training video, and 6 to 16 cents per photo for training images. That is a second paid per-image price, two to five times Freepik's, and a per-minute figure the brief asked for. The Q6 base ($0.03), the $12 / $3 per-roll headline and the '3.3 billion licences for $100M' line all rest on Freepik alone; at Adobe's range the base roll grosses $24 to $64. The conclusion (small) survives, the stated magnitude does not.",
+   "severity": "major"
+  },
+  {
+   "claim": "L9: \"Getty filed a prepackaged Chapter 11 on 2026-10-21 ... Still-image licensing peaked in 2025.\" and L108 (Q7): \"Prices or volumes are falling | ... Getty in Chapter 11 | Supported for stills\"",
+   "problem": "The filing date is correct (Octus, ABF Journal, Bloomberg Law), but the bankruptcy is used as evidence of falling demand. The CEO's first-day declaration, as summarised by Octus, attributes the filing to 'non-operational events': warrant-holder litigation judgments of more than $200M, $275M of unasserted warrant claims, the failed Shutterstock merger and debt service of about $239M a year. Twelve-month revenue to 2026-06-30 was about $978M with about $307M adjusted EBITDA. Chapter 11 here is a balance-sheet event, not a licensing-demand datum, and should be removed from the Q7 evidence column.",
+   "severity": "major"
+  },
+  {
+   "claim": "L9, L30, L59, L108, table rows 5-6: Getty lender deck puts AI data licensing at 2.6% (FY2024), 4.4% (FY2025), 3.4% (LTM Q2 2026) of revenue; derived $24M / $43M / $33M",
+   "problem": "Not verifiable. The cited exhibit (sec.gov ...000121390026108700/ea030834301ex99-2.htm) returned 403 here, and two searches (one extended) found no page carrying 2.6%, 4.4% or 3.4%. A tracker that read the same 2026-10-13 8-K exhibit extracted only '~$40MM of revenue recognized on an accelerated basis in Q4 2025'. The surrounding facts check out (8-K with an investor presentation on 2026-10-13; LTM revenue $978M; FY2025 revenue $981.3M), so the numbers are plausible, but three derived dollar figures and the '4.4% to 3.4%' decline rest on a page nobody but the author has seen. A verifiable substitute exists and was not used: Getty's Q2 2026 10-Q shows Other revenue of $5.2M, down 66.7% from $15.7M, on 'fewer higher-value agreements'.",
+   "severity": "major"
+  },
+  {
+   "claim": "L89: share licensable base 12.7% = \"Kled's realized figure, 200M corpus files / 500,000 contributors = 400 files, / 3,139\"; L97: cross-check \"400 items x $0.0073 = $2.92, within 3% of the base $3.00\"",
+   "problem": "The base is not the quantity the brief asked for (share left after excluding identifiable people, minors, screenshots, duplicates). It divides a seller's catalogue size by a claimed head-count that includes banned and inactive accounts, then by a 2023 survey mean from a different population; the corpus is items contributors chose, includes video, and is face-masked rather than face-excluded. The author's own source cuts against it: Kled's founder said in May 2026 that users had uploaded 'over 1 billion assets' (Premium Times), which implies roughly 2,000+ uploads per contributor and about 20% retained, not 400 items per roll. The cross-check is not independent: item count cancels, so it only says one Reddit anecdote ($0.0073) happens to equal $0.03 x the assumed 25% share ($0.0075).",
+   "severity": "major"
+  },
+  {
+   "claim": "L9: \"Still-image licensing peaked in 2025.\"; L59: \"A catalog can be sold to each large buyer once; the first-wave buyers have it.\"",
+   "problem": "Forecast stated as fact, untagged. Direction is corroborated (Shutterstock DDS nine months down 46%; Getty Other down 66.7% in Q2 2026; Wiley's AI line down 53%), but the headline 91% is one quarter against a +40% comparison quarter, the data offering was down 63% in Q1 and only 11% in Q2, and Shutterstock says recognition 'may vary from quarter-to-quarter based on the delivery timing'. Should read as 'fell in 2026 to date', tagged.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L47: Kled \"Seed of $5.5M announced 2026-03-10; company says total funding is $14M\"",
+   "problem": "The cited review dates the $5.5M seed to a June 2026 SaaS News report ('bringing their total financing to $10 million'); March 2026 is the separate Business Insider quote ($6.5M at a $150M valuation). No '2026-03-10' appears on the page. Kled's own site banner on 2026-11-25 reads 'Kled Raises $10M in Funding', not $14M. The file notes that figures conflict but picks $14M for both tables.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L61: \"Video: holds better. $1 to $4 per minute in 2025 ... One aggregator puts realized rates for large catalogs near $0.55 per minute in 2026\"",
+   "problem": "Internally inconsistent: the only 2026 figure offered is 45% to 86% below the 2025 range, which reads as a fall, not as holding. Both ends are search-summary secondary; the 2026 figure is from a broker's marketing page.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L35: Reddit Other revenue \"$140M in FY2025, up 22% ... Growth slowed through 2025.\"",
+   "problem": "Stale as of the file's date. Reddit's Q2 2026 10-Q (filed 2026-07-31) shows Other revenue of $43.3M, up 24% (talika.ai summary of the filing), so growth re-accelerated in 2026. Three 2026 quarters were available and none was used.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L72 and table row 24: Delete Act \"fine of $200 per consumer per day for failing to register\"",
+   "problem": "Faithful to TrustArc's wording, but TrustArc appears to merge two penalties: the statute's registration penalty is per day, and the per-request-per-day penalty attaches to failing to delete. The numbers table drops the 'as TrustArc describes' hedge and tags it [sourced]. Check against Civ. Code 1798.99.82 before reuse.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L81: \"Nine of the ten r/beermoney posts about Kled from January to May 2026 were removed by moderators\"",
+   "problem": "Re-running the arctic-shift title search returns 11 posts dated 2026-01-09 to 2026-05-11, 10 with removed bodies (14 and 13 if December 2025 is included). Direction right, count wrong.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L50: Protege \"$65M raised (seed $10M in 2024, $25M Series A 2025-08, $30M from a16z 2026-01-08) ... [sourced: siliconangle]\"",
+   "problem": "The SiliconANGLE page states only the $30M and the $25M Series A. Neither the $10M seed nor a $65M total is on it; the total is the author's sum with an unsourced seed.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L113: \"'Get paid for your data' apps die ... Supported: survivors stay under $10M\"",
+   "problem": "Generalised from one company. Streamlytics and Brave, both named in the brief, are never examined; Datacoup rests on a listicle seen through a search summary. Wirestock (a pay-individuals marketplace, $40M run-rate per TechCrunch) and Kled's claimed $8M single request sit in the same file and exceed the threshold.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L54, L61, L62, L55: Vana \"96% below its December 2024 high\"; \"$0.55 per minute\"; \"$2.40 an hour ... $90 to $270 an hour\"; Mercor \"$2 million daily\"",
+   "problem": "Estimator- or vendor-only figures seen through search summaries (CoinMarketCap's AI page, aidata.broker, humanmotiondata.com, roboticscenter.ai, an unnamed aggregator). The author labels them low quality, but they still carry the Q3 modality conclusions and two table cells.",
+   "severity": "minor"
+  },
+  {
+   "claim": "L3 and L201: SEC pages are among \"38 pages\" \"fetched and read this session\"",
+   "problem": "Could not be reproduced: sec.gov refused every request from this environment. The Shutterstock figures match the earnings release and search summaries exactly, including the 91% sentence, so nothing points to fabrication; the fetch claim itself is unconfirmed.",
+   "severity": "minor"
+  }
+ ],
+ "sources_checked": 26,
+ "top5_load_bearing_checks": [
+  "Shutterstock FY2025 10-K, DDS $137.3M / $175.3M / $203.3M, 21% of revenue: SUPPORTED (URL 403 here; WebSearch reading the FY2023 and FY2025 10-Ks and the 2026-02-17 8-K: 'increased 16% as compared to 2024, to $203.3 million and represented 21% of our total revenue in 2025'; dataconto.com: 'Data, Distribution, and Services revenue of $203,264 thousand for 2025').",
+  "Shutterstock Q3 2026 10-Q, DDS $15.8M vs $65.7M, nine months $93.0M vs $172.6M, data offering down 91%: SUPPORTED (earnings-release table on finviz: '$ 15,823 | $ 65,668 | $ 93,005 | $ 172,594', '(76) % ... (46) %'; 10-Q sentence via WebSearch: 'a decline in our data offering, which decreased by 91% in the three months ended September 30, 2026'). Note the release's own '91%' is Content's share of revenue; the data-offering 91% is only in the 10-Q.",
+  "Getty lender deck, AI data licensing 2.6% / 4.4% / 3.4% of revenue: NOT VERIFIED (URL 403; no corroboration in two searches).",
+  "Reuters 2024-04-05 mirror (Freepik, Photobucket, Shutterstock, Defined.ai): SUPPORTED verbatim ('license the majority of its archive of 200 million images at 2 to 4 cents per image'; 'rates of between 5 cents and $1 dollar per photo and more than $1 per video'; 'initially ranged from $25 million to $50 million each'; 'about 20% to 30% of total deal amounts').",
+  "TechCrunch 2026-05-14 (Wirestock): SUPPORTED verbatim ('annual run-rate revenue of $40 million and has so far paid out $15 million to its contributors'; 'more than 700,000 artists and designers'; 'total capital raised to about $26 million').",
+  "Also confirmed: Kled V3 post (500,000 contributors, 8 million datapoints, 98.4%, camera-roll quote); Kled datasets page ('Consented Camera-Roll Corpus (200M files)'); Kled blog ($8M request, Android pre-registration 06.28.26); Premium Times (94.2% of a 10-million-upload sample); App Store (4.6, 2K ratings, 18+, Finance); Authors Guild (final approval 2026-07-20, $1.5B, about $3,000 per work); Troveo (7,000 licensors, 95%, $20M, 1M+ hours BIPA/CUBI); wirestock.io/creators ($20M+, 10M+); TechCrunch Neon (75,000 downloads, offline); Google Play Neon (100K+, 4.4, 5.37K); privacy.ca.gov (definition, 45-day and 30-day rules); TrustArc (300,000 requests, $200); Biometric Update (Google settlement); Burges Salmon (appeal hearing); Olshan ('continued use'); Getty Chapter 11 on 2026-10-21 (Octus); merger terminated 2026-07-07 (CMA notice, talika.ai quoting the 8-K). All arithmetic in the file re-computed and correct."
+ ],
+ "sources_broken_or_misquoted": [
+  "https://www.sec.gov/Archives/edgar/data/1898496/000121390026108700/ea030834301ex99-2.htm (Getty lender presentation): HTTP 403 from this environment and no search result carries the 2.6% / 4.4% / 3.4% figures; unverified, not shown false.",
+  "https://origindatapartners.com/guides/kled-review: does not say the $5.5M seed was 'announced 2026-03-10'; it cites a June 2026 SaaS News report for the seed and a March 2026 Business Insider quote for a different round.",
+  "https://siliconangle.com/2026/01/08/protege-raises-30m-grow-governed-marketplace-ai-training-data/: supports $30M and the $25M Series A only; '$65M raised' and 'seed $10M in 2024' are not on the page.",
+  "arctic-shift search of r/beermoney for 'Kled': returns 10 removed of 11 posts for January to May 2026, not 'nine of the ten'."
+ ],
+ "missing_vs_brief": [
+  "Q1, deals sourced from private individuals: GoPro's opt-in AI Training program (2025-07-30; 50% revenue share; 300,000+ hours by 2025-12-11; described in GoPro's 10-Q) is absent. No search for other consumer-archive licensors is recorded.",
+  "Q1, Adobe: per-minute video and per-photo training purchases answered [unknown] because the Bloomberg page would not load; secondary coverage ($2.62 average, up to $7.25 per minute; 6 to 16 cents per photo) is one search away.",
+  "Q1, Flickr/SmugMug: a single April 2024 quote; current policy [unknown] with no record of reading Flickr's own terms or AI statement.",
+  "Q1, Shutterstock and Getty detail: Shutterstock's Contributor Fund (20% average royalty on data deals, opt-out since 2023) is not cited although Q6 needs a sourced take rate; named buyers (OpenAI, Meta, Google, Amazon, Apple; Getty's 2026-06-22 OpenAI display deal and 2025-10-30 Microsoft agreement) are missing from the deals table; Getty's Q2 2026 Other revenue ($5.2M, down 66.7%) is not used.",
+  "Q1, legal drivers: US Copyright Office report and NYT v. OpenAI rest on secondary trackers with conflicting dates; the EU opt-out regime gets one secondary sentence (no Art. 53(1)(c) copyright-policy duty, no Code of Practice).",
+  "Q2: Scale AI/Outlier, Public AI, Datacurve and Created by Humans are dismissed after 'one combined search' with no buyers, prices, payouts, funding or status; Mercor is one aggregator number. None has a row in the marketplaces table.",
+  "Q2, [unknown] without evidence of trying: Vana funding (the company's own 2024-09 post gives $25M) and any description of data DAOs; Defined.ai funding, volume and 2026 status; Troveo funding; Kled downloads (no app-intelligence estimate tried, and the stated reason, a failed Play lookup, does not apply to an iOS-only app); Wirestock installs and reviews.",
+  "Q2, Kled reviews: the brief asks for reviews; the file gives the star rating and count but no content from App Store reviews, and only two Reddit posts.",
+  "Q3: no RFP, broker price sheet or buyer statement, reported [unknown] without a search log; 'do labs still buy still images?' is answered only from sellers' behaviour; no 2026 per-image price; Kled's task pay rates (shown 'upfront' in V3 per its own post) were not collected.",
+  "Q4: GDPR Art. 6 lawful basis is not addressed (Art. 9 only); CCPA/CPRA 'sale' and 'sharing' definitions, opt-out and sensitive-personal-information limits are not analysed (data-broker registration only); right-of-publicity statutes are not discussed; FTC posture is one URL-less sentence with no 2024-2026 actions; Shutterstock's model-release rule is [unknown] because a page 'did not render', though the rule is in Shutterstock's contributor help pages and its 10-K.",
+  "Q5, surveys: answered [unknown] after one search. Adjacent evidence exists and is unused: CNIL's willingness-to-sell survey (n=2,082; about 4% would sell at EUR 1 a month, about 20% at EUR 4.30) and a 2025 arXiv experiment (67% willing to sell social-media data for $0.25 to $1).",
+  "Q5, provenance: C2PA and device attestation rest on one vendor blog seen through a search summary; no marketplace's verification documentation was read. Kled's 'Camera-Original Phone Photos (1M photos)' in-app-capture product, on the datasets page the author did read, is a device-capture provenance mechanism and goes unremarked.",
+  "Q6: share licensable is not built by exclusion (identifiable people, minors, screenshots, duplicates) as the brief specifies; low and high brackets have no method; price rests on one 2024 stock-library deal; video items in a roll are never priced per minute although the roll figure is 'pictures and videos'; Shutterstock data-licensing margin commentary is [unknown] with no record of checking earnings-call transcripts.",
+  "Q7: Streamlytics and Brave are not examined; the synthetic-data question is closed as [unknown] on one vendor quote with no search for lab statements; 'labs avoid consumer-sourced personal data' has no buyer-side evidence and no record of looking for any (procurement terms, dataset cards, lab policies)."
+ ],
+ "verdict": "needs_fix",
+ "verdict_reason": "The spine holds: every checkable primary figure (Shutterstock 10-K and 10-Q, Reuters, TechCrunch, Kled, Troveo, Authors Guild, store listings, regulator pages) matched its source and all arithmetic is right. It is not a pass because (1) it misses the closest precedent to the variant (GoPro) and a second paid per-image price (Adobe) while stating that only three individual-sourced deals and one closed per-image price exist; (2) Getty's Chapter 11 is used as demand evidence when the company attributes it to litigation and leverage; (3) the Getty lender-deck percentages cannot be verified; (4) the middle input of the camera-roll chain is not the estimate the brief asked for; (5) about a dozen numbers carry tags with no URL; (6) a long list of [unknown] answers show one search or none."
+}
